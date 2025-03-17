@@ -1,7 +1,5 @@
 <!DOCTYPE html>
-
 <!--   SITE FEITO PARA A MINHA AMADA NAMORADA -->
-
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
@@ -27,24 +25,53 @@
         }
 
         body {
-            font-family: 'Nunito', sans-serif;
+            font-family:'Century Gothic', 'Nunito', sans-serif;
             background-color: var(--jiji-light);
             color: #333;
             overflow-x: hidden;
         }
 
         h1, h2, h3, h4, h5 {
-            font-family: 'Fredoka', sans-serif;
+            font-family: 'Century Gothic','Fredoka', sans-serif;
+        }
+
+        p{
+            font-family: "Century Gothic", sans-serif;
+            line-height: 1.6;
+        }
+
+        /* Para manter a fonte Nunito em elementos de navegação e botões */
+        .navbar-nav .nav-link,
+        .btn,
+        .product-tag,
+        .product-price {
+            font-family: 'Nunito', sans-serif;
         }
 
         /* Header Section */
         .header {
             position: relative;
-            background-color: var(--jiji-cream);
-            padding: 3rem 0;
+            background-image: url('fotosJijiPatisserie/Fundo de Aniversário.webp');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 4rem 0;
             margin-bottom: 2rem;
             overflow: hidden;
         }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 240, 219, 0.85);
+            backdrop-filter: blur(5px);
+            z-index: 1;
+        }
+
 
         .header::after {
             content: '';
@@ -55,6 +82,10 @@
             height: 20px;
             background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h20v20H0V0zm10 10h10v10H10V10zM0 10h10v10H0V10z' fill='%23000000' fill-opacity='0.05'/%3E%3C/svg%3E");
             background-size: 20px 20px;
+        }
+        .header .container {
+            position: relative;
+            z-index: 2;
         }
 
         /* Logo responsivo */
@@ -72,6 +103,17 @@
             transform: scale(1.2);
         }
 
+        .featured-cake {
+            max-width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--jiji-black);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+            margin: 0 auto;
+            display: block;
+        }
+
         @media (min-width: 768px) {
             .header img.logo {
                 max-width: 400px;
@@ -86,11 +128,13 @@
         }
 
         .header img.main-cake {
-            max-width: 100%;
+            max-width: 85%; /* Reduzido de 100% */
+            max-height: 450px; /* Define uma altura máxima */
             border-radius: 50%;
             border: 4px solid black;
             box-shadow: 0 8px 24px rgba(0,0,0,0.15);
             transition: transform 0.3s ease;
+            object-fit: cover;
         }
 
         .header img.main-cake:hover {
@@ -205,6 +249,9 @@
         .cat-icon.cupcake:hover {
             transform: translateY(-5px) scale(1.4);
         }
+        .cat-icon.cinnamoon {
+            background-image: url("fotosJijiPatisserie/CinnamonRollPixelArt.png");
+        }
 
         .cat-icon.cookie {
             background-image: url("fotosJijiPatisserie/cheesecake.png");
@@ -222,6 +269,9 @@
 
         .cat-icon.brownie:hover {
             transform: translateY(-5px) scale(1.4);
+        }
+        .cat-icon.cinnamoon:hover{
+            transform: translateY(-5px) scale(1.1);
         }
 
         .product-card {
@@ -506,12 +556,39 @@
             transform: scale(1.1) rotate(5deg);
         }
 
-        /* Para o divisor de pixels no estilo da bandeira francesa */
-        .pixel-divider {
-            height: 10px;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 2'%3E%3Crect width='5' height='2' fill='%23002395'/%3E%3Crect x='5' width='6' height='2' fill='%23FFFFFF'/%3E%3Crect x='11' width='5' height='2' fill='%23ED2939'/%3E%3C/svg%3E");
-            background-size: 16px 2px;
-            margin: 0;
+        .cake-showcase {
+            display: none;
+        }
+
+        .cake-showcase img.main-cake {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transform: scale(0.95);
+            transition: transform 0.5s ease;
+        }
+
+        .cake-showcase::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255,255,255,0) 60%, var(--jiji-cream) 100%);
+            z-index: 1;
+        }
+
+        .main-cake {
+            max-width: 100%;
+            display: block;
+            transform: scale(0.95);
+            transition: transform 0.5s ease;
+        }
+
+        .cake-showcase:hover .main-cake {
+            transform: scale(1);
         }
 
         /* Social media icons */
@@ -632,6 +709,7 @@
                 font-size: 1.8rem;
             }
         }
+
     </style>
 </head>
 <body>
@@ -650,10 +728,10 @@
                     <a class="nav-link active" href="#home">Início</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#products">Produtos</a>
+                    <a class="nav-link" href="#special">Especiais</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#special">Especiais</a>
+                    <a class="nav-link" href="#products">Produtos</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#about">Nossa História</a>
@@ -678,9 +756,6 @@
                 <h2 class="h3 mb-4 fade-in">Bolos artesanais que encantam todos os sentidos</h2>
                 <p class="lead mb-4 fade-in">Cada criação é feita com ingredientes selecionados e muito carinho, trazendo sabor e arte para seus momentos especiais.</p>
                 <a href="#contact" class="btn btn-order fade-in">Faça sua encomenda</a>
-            </div>
-            <div class="col-md-6 text-center">
-                <img src="fotosJijiPatisserie/Fundo de Aniversário.webp" alt="Bolo Especial Jiji" class="main-cake fade-in">
             </div>
         </div>
     </div>
@@ -707,11 +782,11 @@
             <div class="row">
                 <div class="col-lg-6 mb-4">
                     <div class="special-card h-100">
-                        <img src="fotosJijiPatisserie/Fotografiacom%20FundoVermelho%20Claro.webp" alt="Bolo de Festa" class="special-image">
+                        <img src="fotosJijiPatisserie/stitch-cake.png" alt="Bolo de Festa" class="special-image">
                         <h3>Bolo de Aniversário Personalizado</h3>
                         <p>Celebre seu dia especial com um bolo único, criado especialmente para você. Nossas decorações personalizadas transformam qualquer celebração em um momento inesquecível.</p>
                         <p>Consulte sabores disponíveis e reserve com antecedência.</p>
-                        <p class="product-price">A partir de R$ 169,90</p>
+                        <p class="product-price">A partir de R$ 139,90</p>
                         <a href="https://wa.me/5538998983072?text=Olá,%20gostaria%20de%20consultar%20opções%20para%20Bolo%20de%20Aniversário%20Personalizado" class="btn btn-order">Consultar opções</a>
                     </div>
                 </div>
@@ -721,7 +796,7 @@
                         <h3>Bolo Clássico Happy Birthday</h3>
                         <p>Um bolo elegante com decoração clássica e requintada. Design delicado em preto e branco com detalhes de corações, ideal para qualquer idade ou ocasião.</p>
                         <p>Disponível em vários sabores e tamanhos.</p>
-                        <p class="product-price">A partir de R$ 139,90</p>
+                        <p class="product-price">A partir de R$ 169,90</p>
                         <a href="https://wa.me/5538998983072?text=Olá,%20gostaria%20de%20encomendar%20um%20Bolo%20Clássico%20Happy%20Birthday" class="btn btn-order">Encomendar</a>
                     </div>
                 </div>
@@ -733,7 +808,7 @@
                         <h3>Love Celebration Cake</h3>
                         <p>Para celebrações românticas ou para demonstrar amor. Este bolo com decoração de laços e corações vermelhos é uma declaração de carinho.</p>
                         <p>Disponível nos sabores: chocolate, morango ou red velvet.</p>
-                        <p class="product-price">A partir de R$ 149,90</p>
+                        <p class="product-price">A partir de R$ 169,90</p>
                         <a href="https://wa.me/5538998983072?text=Olá,%20gostaria%20de%20encomendar%20um%20Love%20Celebration%20Cake" class="btn btn-order">Encomendar</a>
                     </div>
                 </div>
@@ -741,9 +816,9 @@
                     <div class="special-card h-100">
                         <img src="fotosJijiPatisserie/strawberry-cake.png" alt="Bolo com Morangos" class="special-image">
                         <h3>Bolo Naked com Frutas</h3>
-                        <p>Para os amantes de frutas frescas, este bolo semi-naked decorado com morangos, chocolates e folhas de hortelã é refrescante e elegante.</p>
+                        <p>Para os amantes de frutas frescas, este bolo semi-naked decorado com morangos e docinhos.</p>
                         <p>Perfeito para celebrações diurnas ou festas ao ar livre.</p>
-                        <p class="product-price">A partir de R$ 159,90</p>
+                        <p class="product-price">A partir de R$ 59,90</p>
                         <a href="https://wa.me/5538998983072?text=Olá,%20gostaria%20de%20encomendar%20um%20Bolo%20Naked%20com%20Frutas" class="btn btn-order">Encomendar</a>
                     </div>
                 </div>
@@ -855,17 +930,22 @@
                 <h3>Brownies</h3>
                 <p>Irresistíveis brownies com textura perfeita e sabor intenso de chocolate.</p>
             </div>
+            <div class="col-md-3 mb-4 mb-md-0">
+                <div class="cat-icon cinnamoon"></div>
+                <h3>Cinnamoon Roll</h3>
+                <p>Seguindo a receita tradicional com o irresistível gosto de canela.</p>
+            </div>
         </div>
 
         <div class="row">
             <div class="col-md-4 mb-4">
                 <div class="product-card h-100">
-                    <img src="fotosJijiPatisserie/bololimao.jpg" alt="Cheesecake de Limão" class="product-image">
+                    <img src="fotosJijiPatisserie/bololimao.jpg" alt="Bolo de Limão" class="product-image">
                     <div class="product-info">
                         <span class="product-tag">Bolo</span>
                         <h4>Bolo de Limão</h4>
                         <p class="text-muted">Base crocante de biscoito com recheio cremoso e cobertura de limão siciliano.</p>
-                        <p class="product-price">R$ 89,90</p>
+                        <p class="product-price">R$ 27,90</p>
                         <a href="https://wa.me/5538998983072?text=Olá,%20gostaria%20de%20encomendar%20um%20Cheesecake%20de%20Limão" class="btn btn-order">Encomendar</a>
                     </div>
                 </div>
@@ -889,7 +969,7 @@
                         <span class="product-tag">Bolo</span>
                         <h4>Bolo de Cenoura com Chocolate</h4>
                         <p class="text-muted">Massa úmida de cenoura com recheio de cacau 100%.</p>
-                        <p class="product-price">R$ 129,90</p>
+                        <p class="product-price">R$ 27,90</p>
                         <a href="https://wa.me/5538998983072?text=Olá,%20gostaria%20de%20encomendar%20um%20Bolo%20de%20Cenoura%20com%20Chocolate" class="btn btn-order">Encomendar</a>
                     </div>
                 </div>
@@ -905,12 +985,12 @@
 
             <div class="col-md-4 mb-4">
                 <div class="product-card h-100">
-                    <img src="fotosJijiPatisserie/brownies.png" alt="Brownies Tradicionais" class="product-image">
+                    <img src="fotosJijiPatisserie/brownieTradicional.jpg" alt="Brownies Tradicionais" class="product-image">
                     <div class="product-info">
                         <span class="product-tag">Brownie</span>
                         <h4>Brownies Tradicionais</h4>
                         <p class="text-muted">Nosso clássico brownie com chocolate belga, crocante por fora e macio por dentro.</p>
-                        <p class="product-price">R$ 49,90 (caixa com 6)</p>
+                        <p class="product-price">R$ 39,90 (caixa com 6)</p>
                         <a href="https://wa.me/5538998983072?text=Olá,%20gostaria%20de%20encomendar%20uma%20caixa%20de%20Brownies%20Tradicionais" class="btn btn-order">Encomendar</a>
                     </div>
                 </div>
@@ -923,7 +1003,7 @@
                         <span class="product-tag">Brownie</span>
                         <h4>Brownies Decorados</h4>
                         <p class="text-muted">Brownies com cobertura artística e toppings especiais para ocasiões especiais.</p>
-                        <p class="product-price">R$ 69,90 (caixa com 6)</p>
+                        <p class="product-price">R$ 49,90 (caixa com 6)</p>
                         <a href="https://wa.me/5538998983072?text=Olá,%20gostaria%20de%20encomendar%20uma%20caixa%20de%20Brownies%20Decorados" class="btn btn-order">Encomendar</a>
                     </div>
                 </div>
@@ -1040,8 +1120,11 @@
 </section>
 
 <!-- Footer -->
-<footer class="footer">
-    <div class="container">
+<footer class="footer" style="background-image: url('fotosJijiPatisserie/BakeryStudioGhibli.webp'); background-size: cover; background-position: center; position: relative; color: white; text-shadow: 1px 1px 3px rgba(0,0,0,0.7);">
+    <!-- Overlay para melhorar o contraste -->
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.6);"></div>
+
+    <div class="container" style="position: relative; z-index: 2;">
         <img src="fotosJijiPatisserie/jiji.png" alt="Confeitaria Jiji" class="footer-logo">
 
         <div class="social-icons">
@@ -1050,9 +1133,8 @@
             <a href="https://wa.me/5538998983072" target="_blank"><i class="bi bi-whatsapp"></i></a>
         </div>
 
-        <div class="pixel-divider"></div>
         <p>© 2023 Confeitaria Jiji - Todos os direitos reservados</p>
-        <p class="small text-muted">Imagens fielmente realistas. Consulte disponibilidade e preços atualizados.</p>
+        <p class="small">Imagens fielmente realistas. Consulte disponibilidade e preços atualizados.</p>
     </div>
 </footer>
 
