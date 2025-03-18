@@ -910,10 +910,104 @@
     <div class="container">
         <h2 class="h1 text-center mb-5">Nossos Produtos</h2>
 
-        <!-- Primeira linha: 3 itens, com Páscoa em primeiro -->
-        <div class="row text-center mb-4">
-            <!-- Páscoa primeiro -->
-            <div class="col-md-4 mb-4 mb-md-0">
+        <!-- Primeira linha: 3 itens centralizados -->
+        <div class="row text-center justify-content-center mb-5">
+            <!-- Páscoa com badge -->
+            <div class="col-md-4 mb-4 mb-md-0 position-relative">
+                <!-- SVG Badge positioned absolutely -->
+                <div style="position: absolute; top: -15px; left: -30px; width: 120px; height: 30px; z-index: 2;">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 30">
+                        <defs>
+                            <!-- Gradiente animado com distribuição mais equilibrada -->
+                            <linearGradient id="pixelRainbow" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <!-- Cada cor tem um offset que se move através do badge -->
+                                <stop offset="0%" stop-color="#FF0000">
+                                    <animate attributeName="offset" values="-0.8;1.2;-0.8" dur="6s" repeatCount="indefinite" />
+                                </stop>
+                                <stop offset="16.6%" stop-color="#FF9900">
+                                    <animate attributeName="offset" values="-0.6;1.4;-0.6" dur="6s" repeatCount="indefinite" />
+                                </stop>
+                                <stop offset="33.3%" stop-color="#FFFF00">
+                                    <animate attributeName="offset" values="-0.4;1.6;-0.4" dur="6s" repeatCount="indefinite" />
+                                </stop>
+                                <stop offset="50%" stop-color="#33CC33">
+                                    <animate attributeName="offset" values="-0.2;1.8;-0.2" dur="6s" repeatCount="indefinite" />
+                                </stop>
+                                <stop offset="66.6%" stop-color="#3399FF">
+                                    <animate attributeName="offset" values="0;2;0" dur="6s" repeatCount="indefinite" />
+                                </stop>
+                                <stop offset="83.3%" stop-color="#9933FF">
+                                    <animate attributeName="offset" values="0.2;2.2;0.2" dur="6s" repeatCount="indefinite" />
+                                </stop>
+                                <stop offset="100%" stop-color="#FF0066">
+                                    <animate attributeName="offset" values="0.4;2.4;0.4" dur="6s" repeatCount="indefinite" />
+                                </stop>
+                            </linearGradient>
+                        </defs>
+
+                        <!-- Fundo pixelado com formato de botão/badge -->
+                        <rect x="4" y="4" width="112" height="22" fill="url(#pixelRainbow)" />
+
+                        <!-- Cantos arredondados (pixelados) -->
+                        <rect x="3" y="5" width="1" height="20" fill="url(#pixelRainbow)" />
+                        <rect x="2" y="6" width="1" height="18" fill="url(#pixelRainbow)" />
+                        <rect x="1" y="8" width="1" height="14" fill="url(#pixelRainbow)" />
+
+                        <rect x="116" y="5" width="1" height="20" fill="url(#pixelRainbow)" />
+                        <rect x="117" y="6" width="1" height="18" fill="url(#pixelRainbow)" />
+                        <rect x="118" y="8" width="1" height="14" fill="url(#pixelRainbow)" />
+
+                        <!-- LIMITADO - Palavra reposicionada +11px para direita e +2px para baixo -->
+                        <!-- Letra L -->
+                        <rect x="29" y="10" width="2" height="10" fill="white" />
+                        <rect x="31" y="18" width="3" height="2" fill="white" />
+
+                        <!-- Letra I -->
+                        <rect x="36" y="10" width="2" height="10" fill="white" />
+
+                        <!-- Letra M - com pixels internos finos e corrigidos -->
+                        <rect x="40" y="10" width="2" height="10" fill="white" />
+                        <rect x="45" y="10" width="2" height="10" fill="white" />
+                        <rect x="43" y="13" width="1" height="2" fill="white" />
+                        <rect x="42" y="11" width="1" height="2" fill="white" />
+                        <rect x="44" y="11" width="1" height="2" fill="white" />
+
+                        <!-- Letra I - Conectada logo após o M -->
+                        <rect x="49" y="10" width="2" height="10" fill="white" />
+
+                        <!-- Letra T - Conectada -->
+                        <rect x="53" y="10" width="7" height="2" fill="white" />
+                        <rect x="56" y="10" width="2" height="10" fill="white" />
+
+                        <!-- Letra A - Conectada -->
+                        <rect x="62" y="10" width="2" height="10" fill="white" />
+                        <rect x="68" y="10" width="2" height="10" fill="white" />
+                        <rect x="64" y="10" width="4" height="2" fill="white" />
+                        <rect x="64" y="14" width="4" height="2" fill="white" />
+
+                        <!-- Letra D - Conectada -->
+                        <rect x="72" y="10" width="2" height="10" fill="white" />
+                        <rect x="74" y="10" width="3" height="2" fill="white" />
+                        <rect x="77" y="12" width="2" height="6" fill="white" />
+                        <rect x="74" y="18" width="3" height="2" fill="white" />
+
+                        <!-- Letra O - Conectada -->
+                        <rect x="81" y="10" width="2" height="10" fill="white" />
+                        <rect x="87" y="10" width="2" height="10" fill="white" />
+                        <rect x="83" y="10" width="4" height="2" fill="white" />
+                        <rect x="83" y="18" width="4" height="2" fill="white" />
+
+                        <!-- Brilho animado que se move sobre o badge com timing diferente -->
+                        <rect width="15" height="22" fill="white" opacity="0.15" x="4" y="4">
+                            <animate
+                                    attributeName="x"
+                                    values="4;102;4"
+                                    dur="3.5s"
+                                    repeatCount="indefinite" />
+                        </rect>
+                    </svg>
+                </div>
+                <!-- Easter icon and content -->
                 <div class="cat-icon cupcake"></div>
                 <h3>Páscoa</h3>
                 <p>Criações especiais para celebrar a Páscoa com doçura e alegria para toda a família.</p>
@@ -935,7 +1029,7 @@
         </div>
 
         <!-- Segunda linha: 2 itens centralizados -->
-        <div class="row text-center justify-content-center">
+        <div class="row text-center justify-content-center mb-5">
             <!-- Brownies -->
             <div class="col-md-4 mb-4 mb-md-0">
                 <div class="cat-icon brownie"></div>
@@ -951,14 +1045,15 @@
             </div>
         </div>
 
-        <div class="row mt-5">
+        <!-- Produtos específicos -->
+        <div class="row justify-content-center mt-5">
             <div class="col-md-4 mb-4">
                 <div class="product-card h-100">
                     <img src="fotosJijiPatisserie/bololimao.jpg" alt="Bolo de Limão" class="product-image">
                     <div class="product-info">
                         <span class="product-tag">Bolo</span>
                         <h4>Bolo de Limão</h4>
-                        <p class="text-muted">Base crocante de biscoito com recheio cremoso e cobertura de limão siciliano.</p>
+                        <p class="text-muted">Suave pão de ló com recheio cremoso e cobertura de limão-taiti.</p>
                         <p class="product-price">R$ 27,90</p>
                         <a href="https://wa.me/5538998983072?text=Olá,%20gostaria%20de%20encomendar%20um%20Cheesecake%20de%20Limão" class="btn btn-order">Encomendar</a>
                     </div>
@@ -985,7 +1080,7 @@
                 <p class="text-muted">Nossas delícias para qualquer momento do dia</p>
             </div>
 
-            <div class="col-md-4 mb-4">
+            <div class="col-md-4 mb-4 mx-auto">
                 <div class="product-card h-100">
                     <img src="fotosJijiPatisserie/brownieTradicional.jpg" alt="Brownies Tradicionais" class="product-image">
                     <div class="product-info">
@@ -998,7 +1093,7 @@
                 </div>
             </div>
 
-            <div class="col-md-4 mb-4">
+            <div class="col-md-4 mb-4 mx-auto">
                 <div class="product-card h-100">
                     <img src="fotosJijiPatisserie/brownieReal.png" alt="Brownies Decorados" class="product-image">
                     <div class="product-info">
