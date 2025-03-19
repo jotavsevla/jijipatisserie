@@ -709,7 +709,21 @@
                 font-size: 1.8rem;
             }
         }
+        .icon-link {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+            padding: 15px;
+            border-radius: 10px;
+        }
 
+        .icon-link:hover {
+            transform: translateY(-5px);
+            background-color: rgba(255, 240, 219, 0.5);
+            text-decoration: none;
+            color: inherit;
+        }
     </style>
 </head>
 <body>
@@ -772,7 +786,6 @@
         <!-- Tabs de categorias -->
         <div class="category-tabs mb-5">
             <div class="category-tab active" data-category="aniversario">Aniversário</div>
-            <div class="category-tab" data-category="casamento">Casamento</div>
             <div class="category-tab" data-category="tematicos">Temáticos</div>
             <div class="category-tab" data-category="datas">Datas Especiais</div>
         </div>
@@ -825,32 +838,6 @@
             </div>
         </div>
 
-        <!-- Conteúdo de Casamento -->
-        <div class="special-content" id="casamento-content">
-            <div class="row">
-                <div class="col-lg-6 mb-4">
-                    <div class="special-card h-100">
-                        <img src="fotosJijiPatisserie/wedding-cake.png" alt="Bolo de Casamento" class="special-image">
-                        <h3>Bolo de Casamento Tradicional</h3>
-                        <p>Bolos de casamento em camadas com design clássico e elegante. Personalizamos conforme o estilo da cerimônia e suas preferências.</p>
-                        <p>Agendamento com no mínimo 30 dias de antecedência.</p>
-                        <p class="product-price">A partir de R$ 890,00</p>
-                        <a href="https://wa.me/5538998983072?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta%20para%20Bolo%20de%20Casamento" class="btn btn-order">Agendar consulta</a>
-                    </div>
-                </div>
-                <div class="col-lg-6 mb-4">
-                    <div class="special-card h-100">
-                        <img src="fotosJijiPatisserie/mini-wedding-cake.png" alt="Mini Wedding" class="special-image">
-                        <h3>Mini Wedding Cake</h3>
-                        <p>Opção ideal para cerimônias íntimas, mini-weddings ou casamentos civis. Bolos menores mas com o mesmo requinte e personalização.</p>
-                        <p>Consulte opções de estilo e decoração.</p>
-                        <p class="product-price">A partir de R$ 390,00</p>
-                        <a href="https://wa.me/5538998983072?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20Mini%20Wedding%20Cake" class="btn btn-order">Solicitar informações</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <!-- Conteúdo Temáticos -->
         <div class="special-content" id="tematicos-content">
             <div class="row">
@@ -866,7 +853,7 @@
                 </div>
                 <div class="col-lg-6 mb-4">
                     <div class="special-card h-100">
-                        <img src="fotosJijiPatisserie/BoloTematico.png" alt="Bolo Infantil" class="special-image">
+                        <img src="fotosJijiPatisserie/stitch-cake.png" alt="Bolo Infantil" class="special-image">
                         <h3>Bolos Infantis</h3>
                         <p>Bolos mágicos que encantam as crianças e os adultos, com decorações coloridas, personagens favoritos e muito sabor e diversão.</p>
                         <p>Disponível em diversos temas e tamanhos.</p>
@@ -884,7 +871,8 @@
                     <div class="special-card h-100">
                         <img src="fotosJijiPatisserie/pascal-cake.png" alt="Bolo de Páscoa" class="special-image">
                         <h3>Bolos de Páscoa</h3>
-                        <p>Celebre a Páscoa com nossos bolos especiais decorados com motivos pascoais, chocolate premium e muito sabor.</p>
+                        <p>Celebre a Páscoa com nossos bolos especiais decorados com motivos pascoais, chocolate premium
+                            e muito sabor.</p>
                         <p>Disponível por tempo limitado. Encomende com antecedência.</p>
                         <p class="product-price">A partir de R$ 159,90</p>
                         <a href="https://wa.me/5538998983072?text=Olá,%20gostaria%20de%20encomendar%20um%20Bolo%20de%20Páscoa" class="btn btn-order">Encomendar</a>
@@ -894,7 +882,8 @@
                     <div class="special-card h-100">
                         <img src="fotosJijiPatisserie/christmas-cake.png" alt="Bolo de Natal" class="special-image">
                         <h3>Bolos de Natal</h3>
-                        <p>Tradicionais e deliciosos bolos natalinos com frutas cristalizadas, nozes e especiarias, decorados com temas festivos.</p>
+                        <p>Tradicionais e deliciosos bolos natalinos com frutas cristalizadas, nozes e especiarias, deco
+                            rados com temas festivos.</p>
                         <p>Reservas disponíveis a partir de novembro.</p>
                         <p class="product-price">A partir de R$ 169,90</p>
                         <a href="https://wa.me/5538998983072?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20os%20Bolos%20de%20Natal" class="btn btn-order">Reservar</a>
@@ -914,117 +903,122 @@
         <div class="row text-center justify-content-center mb-5">
             <!-- Páscoa com badge -->
             <div class="col-md-4 mb-4 mb-md-0 position-relative">
-                <!-- SVG Badge positioned absolutely -->
-                <div style="position: absolute; top: -15px; left: -30px; width: 120px; height: 30px; z-index: 2;">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 30">
-                        <defs>
-                            <!-- Gradiente animado com distribuição mais equilibrada -->
-                            <linearGradient id="pixelRainbow" x1="0%" y1="0%" x2="100%" y2="0%">
-                                <!-- Cada cor tem um offset que se move através do badge -->
-                                <stop offset="0%" stop-color="#FF0000">
-                                    <animate attributeName="offset" values="-0.8;1.2;-0.8" dur="6s" repeatCount="indefinite" />
-                                </stop>
-                                <stop offset="16.6%" stop-color="#FF9900">
-                                    <animate attributeName="offset" values="-0.6;1.4;-0.6" dur="6s" repeatCount="indefinite" />
-                                </stop>
-                                <stop offset="33.3%" stop-color="#FFFF00">
-                                    <animate attributeName="offset" values="-0.4;1.6;-0.4" dur="6s" repeatCount="indefinite" />
-                                </stop>
-                                <stop offset="50%" stop-color="#33CC33">
-                                    <animate attributeName="offset" values="-0.2;1.8;-0.2" dur="6s" repeatCount="indefinite" />
-                                </stop>
-                                <stop offset="66.6%" stop-color="#3399FF">
-                                    <animate attributeName="offset" values="0;2;0" dur="6s" repeatCount="indefinite" />
-                                </stop>
-                                <stop offset="83.3%" stop-color="#9933FF">
-                                    <animate attributeName="offset" values="0.2;2.2;0.2" dur="6s" repeatCount="indefinite" />
-                                </stop>
-                                <stop offset="100%" stop-color="#FF0066">
-                                    <animate attributeName="offset" values="0.4;2.4;0.4" dur="6s" repeatCount="indefinite" />
-                                </stop>
-                            </linearGradient>
-                        </defs>
-
-                        <!-- Fundo pixelado com formato de botão/badge -->
-                        <rect x="4" y="4" width="112" height="22" fill="url(#pixelRainbow)" />
-
-                        <!-- Cantos arredondados (pixelados) -->
-                        <rect x="3" y="5" width="1" height="20" fill="url(#pixelRainbow)" />
-                        <rect x="2" y="6" width="1" height="18" fill="url(#pixelRainbow)" />
-                        <rect x="1" y="8" width="1" height="14" fill="url(#pixelRainbow)" />
-
-                        <rect x="116" y="5" width="1" height="20" fill="url(#pixelRainbow)" />
-                        <rect x="117" y="6" width="1" height="18" fill="url(#pixelRainbow)" />
-                        <rect x="118" y="8" width="1" height="14" fill="url(#pixelRainbow)" />
-
-                        <!-- LIMITADO - Palavra reposicionada +11px para direita e +2px para baixo -->
-                        <!-- Letra L -->
-                        <rect x="29" y="10" width="2" height="10" fill="white" />
-                        <rect x="31" y="18" width="3" height="2" fill="white" />
-
-                        <!-- Letra I -->
-                        <rect x="36" y="10" width="2" height="10" fill="white" />
-
-                        <!-- Letra M - com pixels internos finos e corrigidos -->
-                        <rect x="40" y="10" width="2" height="10" fill="white" />
-                        <rect x="45" y="10" width="2" height="10" fill="white" />
-                        <rect x="43" y="13" width="1" height="2" fill="white" />
-                        <rect x="42" y="11" width="1" height="2" fill="white" />
-                        <rect x="44" y="11" width="1" height="2" fill="white" />
-
-                        <!-- Letra I - Conectada logo após o M -->
-                        <rect x="49" y="10" width="2" height="10" fill="white" />
-
-                        <!-- Letra T - Conectada -->
-                        <rect x="53" y="10" width="7" height="2" fill="white" />
-                        <rect x="56" y="10" width="2" height="10" fill="white" />
-
-                        <!-- Letra A - Conectada -->
-                        <rect x="62" y="10" width="2" height="10" fill="white" />
-                        <rect x="68" y="10" width="2" height="10" fill="white" />
-                        <rect x="64" y="10" width="4" height="2" fill="white" />
-                        <rect x="64" y="14" width="4" height="2" fill="white" />
-
-                        <!-- Letra D - Conectada -->
-                        <rect x="72" y="10" width="2" height="10" fill="white" />
-                        <rect x="74" y="10" width="3" height="2" fill="white" />
-                        <rect x="77" y="12" width="2" height="6" fill="white" />
-                        <rect x="74" y="18" width="3" height="2" fill="white" />
-
-                        <!-- Letra O - Conectada -->
-                        <rect x="81" y="10" width="2" height="10" fill="white" />
-                        <rect x="87" y="10" width="2" height="10" fill="white" />
-                        <rect x="83" y="10" width="4" height="2" fill="white" />
-                        <rect x="83" y="18" width="4" height="2" fill="white" />
-
-                        <!-- Brilho animado que se move sobre o badge com timing diferente -->
-                        <rect width="15" height="22" fill="white" opacity="0.15" x="4" y="4">
-                            <animate
-                                    attributeName="x"
-                                    values="4;102;4"
-                                    dur="3.5s"
-                                    repeatCount="indefinite" />
-                        </rect>
-                    </svg>
-                </div>
                 <!-- Easter icon and content -->
-                <div class="cat-icon cupcake"></div>
-                <h3>Páscoa</h3>
-                <p>Criações especiais para celebrar a Páscoa com doçura e alegria para toda a família.</p>
+                <a href="#pascoa-section" class="icon-link">
+                    <div style="position: absolute; top: -15px; left: -30px; width: 120px; height: 30px; z-index: 2;">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 30">
+                            <defs>
+                                <!-- Gradiente animado com distribuição mais equilibrada -->
+                                <linearGradient id="pixelRainbow" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <!-- Cada cor tem um offset que se move através do badge -->
+                                    <stop offset="0%" stop-color="#FF0000">
+                                        <animate attributeName="offset" values="-0.8;1.2;-0.8" dur="6s" repeatCount="indefinite" />
+                                    </stop>
+                                    <stop offset="16.6%" stop-color="#FF9900">
+                                        <animate attributeName="offset" values="-0.6;1.4;-0.6" dur="6s" repeatCount="indefinite" />
+                                    </stop>
+                                    <stop offset="33.3%" stop-color="#FFFF00">
+                                        <animate attributeName="offset" values="-0.4;1.6;-0.4" dur="6s" repeatCount="indefinite" />
+                                    </stop>
+                                    <stop offset="50%" stop-color="#33CC33">
+                                        <animate attributeName="offset" values="-0.2;1.8;-0.2" dur="6s" repeatCount="indefinite" />
+                                    </stop>
+                                    <stop offset="66.6%" stop-color="#3399FF">
+                                        <animate attributeName="offset" values="0;2;0" dur="6s" repeatCount="indefinite" />
+                                    </stop>
+                                    <stop offset="83.3%" stop-color="#9933FF">
+                                        <animate attributeName="offset" values="0.2;2.2;0.2" dur="6s" repeatCount="indefinite" />
+                                    </stop>
+                                    <stop offset="100%" stop-color="#FF0066">
+                                        <animate attributeName="offset" values="0.4;2.4;0.4" dur="6s" repeatCount="indefinite" />
+                                    </stop>
+                                </linearGradient>
+                            </defs>
+
+                            <!-- Fundo pixelado com formato de botão/badge -->
+                            <rect x="4" y="4" width="112" height="22" fill="url(#pixelRainbow)" />
+
+                            <!-- Cantos arredondados (pixelados) -->
+                            <rect x="3" y="5" width="1" height="20" fill="url(#pixelRainbow)" />
+                            <rect x="2" y="6" width="1" height="18" fill="url(#pixelRainbow)" />
+                            <rect x="1" y="8" width="1" height="14" fill="url(#pixelRainbow)" />
+
+                            <rect x="116" y="5" width="1" height="20" fill="url(#pixelRainbow)" />
+                            <rect x="117" y="6" width="1" height="18" fill="url(#pixelRainbow)" />
+                            <rect x="118" y="8" width="1" height="14" fill="url(#pixelRainbow)" />
+
+                            <!-- LIMITADO - Palavra reposicionada +11px para direita e +2px para baixo -->
+                            <!-- Letra L -->
+                            <rect x="29" y="10" width="2" height="10" fill="white" />
+                            <rect x="31" y="18" width="3" height="2" fill="white" />
+
+                            <!-- Letra I -->
+                            <rect x="36" y="10" width="2" height="10" fill="white" />
+
+                            <!-- Letra M - com pixels internos finos e corrigidos -->
+                            <rect x="40" y="10" width="2" height="10" fill="white" />
+                            <rect x="45" y="10" width="2" height="10" fill="white" />
+                            <rect x="43" y="13" width="1" height="2" fill="white" />
+                            <rect x="42" y="11" width="1" height="2" fill="white" />
+                            <rect x="44" y="11" width="1" height="2" fill="white" />
+
+                            <!-- Letra I - Conectada logo após o M -->
+                            <rect x="49" y="10" width="2" height="10" fill="white" />
+
+                            <!-- Letra T - Conectada -->
+                            <rect x="53" y="10" width="7" height="2" fill="white" />
+                            <rect x="56" y="10" width="2" height="10" fill="white" />
+
+                            <!-- Letra A - Conectada -->
+                            <rect x="62" y="10" width="2" height="10" fill="white" />
+                            <rect x="68" y="10" width="2" height="10" fill="white" />
+                            <rect x="64" y="10" width="4" height="2" fill="white" />
+                            <rect x="64" y="14" width="4" height="2" fill="white" />
+
+                            <!-- Letra D - Conectada -->
+                            <rect x="72" y="10" width="2" height="10" fill="white" />
+                            <rect x="74" y="10" width="3" height="2" fill="white" />
+                            <rect x="77" y="12" width="2" height="6" fill="white" />
+                            <rect x="74" y="18" width="3" height="2" fill="white" />
+
+                            <!-- Letra O - Conectada -->
+                            <rect x="81" y="10" width="2" height="10" fill="white" />
+                            <rect x="87" y="10" width="2" height="10" fill="white" />
+                            <rect x="83" y="10" width="4" height="2" fill="white" />
+                            <rect x="83" y="18" width="4" height="2" fill="white" />
+
+                            <!-- Brilho animado que se move sobre o badge com timing diferente -->
+                            <rect width="15" height="22" fill="white" opacity="0.15" x="4" y="4">
+                                <animate
+                                        attributeName="x"
+                                        values="4;102;4"
+                                        dur="3.5s"
+                                        repeatCount="indefinite" />
+                            </rect>
+                        </svg>
+                    </div>
+                    <div class="cat-icon cupcake"></div>
+                    <h3>Páscoa</h3>
+                    <p>Criações especiais para celebrar a Páscoa com doçura e alegria para toda a família.</p>
+                </a>
             </div>
 
             <!-- Bolos -->
             <div class="col-md-4 mb-4 mb-md-0">
-                <div class="cat-icon cake"></div>
-                <h3>Bolos</h3>
-                <p>Deliciosos bolos para todas as ocasiões, com recheios incríveis e decorações personalizadas.</p>
+                <a href="#bolos-produtos" class="icon-link">
+                    <div class="cat-icon cake"></div>
+                    <h3>Bolos</h3>
+                    <p>Deliciosos bolos para todas as ocasiões, com recheios incríveis e decorações personalizadas.</p>
+                </a>
             </div>
 
             <!-- Cheesecake -->
             <div class="col-md-4 mb-4 mb-md-0">
-                <div class="cat-icon cookie"></div>
-                <h3>Cheesecake</h3>
-                <p>Criações exclusivas para surpreender o paladar e adoçar o seu dia.</p>
+                <a href="#cheesecake-section" class="icon-link">
+                    <div class="cat-icon cookie"></div>
+                    <h3>Cheesecake</h3>
+                    <p>Criações exclusivas para surpreender o paladar e adoçar o seu dia.</p>
+                </a>
             </div>
         </div>
 
@@ -1032,21 +1026,29 @@
         <div class="row text-center justify-content-center mb-5">
             <!-- Brownies -->
             <div class="col-md-4 mb-4 mb-md-0">
-                <div class="cat-icon brownie"></div>
-                <h3>Brownies</h3>
-                <p>Irresistíveis brownies com textura perfeita e sabor intenso de chocolate.</p>
+                <a href="#brownies-section" class="icon-link">
+                    <div class="cat-icon brownie"></div>
+                    <h3>Brownies</h3>
+                    <p>Irresistíveis brownies com textura perfeita e sabor intenso de chocolate.</p>
+                </a>
             </div>
 
             <!-- Cinnamoon Roll -->
             <div class="col-md-4">
-                <div class="cat-icon cinnamoon"></div>
-                <h3>Cinnamoon Roll</h3>
-                <p>Seguindo a receita tradicional com o irresistível gosto de canela.</p>
+                <a href="#cinnamoon-section" class="icon-link">
+                    <div class="cat-icon cinnamoon"></div>
+                    <h3>Cinnamoon Roll</h3>
+                    <p>Seguindo a receita tradicional com o irresistível gosto de canela.</p>
+                </a>
             </div>
         </div>
 
         <!-- Produtos específicos -->
-        <div class="row justify-content-center mt-5">
+        <div id="bolos-produtos" class="row justify-content-center mt-5">
+            <div class="col-12 text-center mb-4">
+                <h3>Bolos tradicionais</h3>
+                <p class="text-muted">Bolos feitos com pão de ló ou massa tradicional para qualquer momento do dia</p>
+            </div>
             <div class="col-md-4 mb-4">
                 <div class="product-card h-100">
                     <img src="fotosJijiPatisserie/bololimao.jpg" alt="Bolo de Limão" class="product-image">
@@ -1074,13 +1076,13 @@
         </div>
 
         <!-- Brownies Row -->
-        <div class="row mt-5">
-            <div class="col-12 text-center mb-4">
+        <div class="row justify-content-center mt-5">
+            <div class="col-12 text-center mb-4" id="brownies-section">
                 <h3>Brownies & Sobremesas</h3>
                 <p class="text-muted">Nossas delícias para qualquer momento do dia</p>
             </div>
 
-            <div class="col-md-4 mb-4 mx-auto">
+            <div class="col-md-4 mb-4">
                 <div class="product-card h-100">
                     <img src="fotosJijiPatisserie/brownieTradicional.jpg" alt="Brownies Tradicionais" class="product-image">
                     <div class="product-info">
@@ -1093,7 +1095,7 @@
                 </div>
             </div>
 
-            <div class="col-md-4 mb-4 mx-auto">
+            <div class="col-md-4 mb-4">
                 <div class="product-card h-100">
                     <img src="fotosJijiPatisserie/brownieReal.png" alt="Brownies Decorados" class="product-image">
                     <div class="product-info">
@@ -1104,6 +1106,13 @@
                         <a href="https://wa.me/5538998983072?text=Olá,%20gostaria%20de%20encomendar%20uma%20caixa%20de%20Brownies%20Decorados" class="btn btn-order">Encomendar</a>
                     </div>
                 </div>
+            </div>
+        </div>
+        <!-- cinnamoon section -->
+        <div class="row justify-content-center mt-5">
+            <div class="col-12 text-center mb-4" id="brownies-section">
+                <h3>Brownies & Sobremesas</h3>
+                <p class="text-muted">Momentos perfeitos com gostinho de canela</p>
             </div>
         </div>
     </div>
@@ -1298,6 +1307,57 @@
                 // Show selected content
                 const category = this.getAttribute('data-category');
                 document.getElementById(category + '-content').classList.add('active');
+            });
+        });
+        function setupIconNavigation() {
+            // Selecionando todos os links de ícones pela classe
+            const iconLinks = document.querySelectorAll('.icon-link');
+
+            iconLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+
+                    if (targetElement) {
+                        // Rolar suavemente até o elemento com um offset para a barra de navegação
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80, // Ajuste este valor conforme necessário
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        }
+
+        // Chamando a função de configuração da navegação
+        setupIconNavigation();
+        const iconLinks = document.querySelectorAll('.icon-link');
+
+        iconLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href').substring(1); // Remove o # do início
+                const targetElement = document.getElementById(targetId);
+
+                console.log("Clicado em:", targetId); // Para debug
+                console.log("Elemento encontrado:", targetElement); // Para debug
+
+                if (targetElement) {
+                    // Usa getBoundingClientRect para posicionamento mais preciso
+                    const rect = targetElement.getBoundingClientRect();
+                    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                    const targetPosition = rect.top + scrollTop - 100; // 100px de offset
+
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                } else {
+                    console.error("Elemento com ID", targetId, "não encontrado"); // Para debug
+                }
             });
         });
     });
