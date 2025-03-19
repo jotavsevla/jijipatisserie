@@ -325,6 +325,7 @@
             color: var(--jiji-black);
             position: relative;
             display: inline-block;
+            margin-bottom: 20px; /* Força um espaço maior após o preço */
         }
 
         .product-price::after {
@@ -351,7 +352,7 @@
             font-weight: 600;
             transition: all 0.3s ease;
             border: none;
-            margin-top: 1rem;
+            margin-top: 15px ; /* Adiciona espaço antes do botão */
         }
 
         .btn-order:hover {
@@ -724,6 +725,29 @@
             text-decoration: none;
             color: inherit;
         }
+<!-- Introdução do XGOHORSE -->
+        /* Seletores mais específicos para sobrescrever qualquer outro estilo */
+        .product-card .product-info .product-price {
+            margin-bottom: 25px !important;
+            display: block !important;
+        }
+
+        .product-card .product-info .btn-order {
+            margin-top: 20px !important;
+            display: block !important;
+        }
+
+        /* Seletores alternativos caso os acima não funcionem */
+        div.product-card div.product-info p.product-price {
+            margin-bottom: 25px !important;
+            display: block !important;
+        }
+
+        div.product-card div.product-info a.btn-order,
+        div.product-card div.product-info button.btn-order {
+            margin-top: 20px !important;
+            display: block !important;
+        }
     </style>
 </head>
 <body>
@@ -1044,6 +1068,131 @@
         </div>
 
         <!-- Produtos específicos -->
+        <!-- Páscoa Section -->
+        <div class="row justify-content-center mt-5">
+            <div class="col-12 text-center mb-4" id="pascoa-section">
+                <h3>Páscoa Especial 2025</h3>
+                <p class="text-muted">Deixe seu dia mais especial com nossas delícias artesanais</p>
+            </div>
+
+            <!-- Produto 1: Ovos Recheados -->
+            <div class="col-md-4 mb-4">
+                <div class="product-card h-100">
+                    <img src="fotosJijiPatisserie/ovos.jpg" alt="Ovos Recheados" class="product-image">
+                    <div class="product-info">
+                        <span class="product-tag">Páscoa</span>
+                        <h4>Ovos Recheados</h4>
+                        <p class="text-muted">Deliciosos ovos artesanais em diferentes tamanhos com recheios especiais à sua escolha.</p>
+                        <p class="product-price">
+                            <small>Tamanhos e valores:</small><br>
+                            150g - R$50,00<br>
+                            250g - R$70,00<br>
+                            350g - R$120,00
+                        </p>
+                        <a href="https://wa.me/5538998983072?text=Olá,%20gostaria%20de%20encomendar%20Ovos%20de%20Páscoa%20Recheados" class="btn btn-order">Encomendar</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produto 2: Kit Mini Ovinhos -->
+            <div class="col-md-4 mb-4">
+                <div class="product-card h-100">
+                    <img src="fotosJijiPatisserie/mini-ovos.jpg" alt="Kit Mini Ovinhos" class="product-image">
+                    <div class="product-info">
+                        <span class="product-tag">Páscoa</span>
+                        <h4>Kit Mini Ovinhos</h4>
+                        <p class="text-muted">Mini ovinhos de chocolate decorados, perfeitos para presentear ou para mesa de Páscoa.</p>
+                        <p class="product-price">
+                            <small>50g por unidade</small><br>
+                            4 un - R$40,00<br>
+                            7 un - R$80,00<br>
+                            10 un - R$95,00
+                        </p>
+                        <a href="https://wa.me/5538998983072?text=Olá,%20gostaria%20de%20encomendar%20um%20Kit%20Mini%20Ovinhos" class="btn btn-order">Encomendar</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produto 3: Coelhinho Recheado -->
+            <div class="col-md-4 mb-4">
+                <div class="product-card h-100">
+                    <img src="fotosJijiPatisserie/coelhoChocolate.jpg" alt="Coelhinho Recheado" class="product-image">
+                    <div class="product-info">
+                        <span class="product-tag">Páscoa</span>
+                        <h4>Coelhinho Recheado</h4>
+                        <p class="text-muted">Adoráveis coelhinhos de chocolate recheados, uma opção divertida para a Páscoa.</p>
+                        <p class="product-price">
+                            <small>70g por unidade</small><br>
+                            4 un - R$50,00<br>
+                            7 un - R$70,00<br>
+                            10 un - R$90,00
+                        </p>
+                        <a href="https://wa.me/5538998983072?text=Olá,%20gostaria%20de%20encomendar%20Coelhinhos%20Recheados" class="btn btn-order">Encomendar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Seção de Opções de Chocolate e Recheio -->
+        <!-- Seção de Opções - Estilo da Imagem -->
+        <!-- Seção de Opções - Com espaçamento melhorado -->
+        <div class="row justify-content-center mt-4 mb-4">
+            <!-- Caixa de Casquinha -->
+            <div class="col-md-5 mb-3">
+                <div class="special-card p-4 h-100" style="background-color: white; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
+                    <h4 class="text-center mb-4" style="font-weight: 600; color: #333;">Escolha sua Casquinha</h4>
+                    <div class="text-center">
+                        <p style="margin-bottom: 10px;">• Chocolate nobre ao leite</p>
+                        <p style="margin-bottom: 10px;">• Chocolate nobre branco</p>
+                        <p style="margin-bottom: 10px;">• Chocolate meio amargo</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Espaço entre as caixas -->
+            <div class="col-md-1"></div>
+
+            <!-- Caixa de Recheios -->
+            <div class="col-md-5 mb-3">
+                <div class="special-card p-4 h-100" style="background-color: white; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
+                    <h4 class="text-center mb-4" style="font-weight: 600; color: #333;">Opções de Recheio</h4>
+                    <div class="row">
+                        <div class="col-6">
+                            <ul class="list-unstyled" style="padding-left: 15px;">
+                                <li style="margin-bottom: 10px;">• Pistache ao leite</li>
+                                <li style="margin-bottom: 10px;">• Prestígio</li>
+                                <li style="margin-bottom: 10px;">• Oreo de mel</li>
+                                <li style="margin-bottom: 10px;">• Maracujá</li>
+                            </ul>
+                        </div>
+                        <div class="col-6">
+                            <ul class="list-unstyled" style="padding-left: 15px;">
+                                <li style="margin-bottom: 10px;">• Ninho com Nutella&reg;</li>
+                                <li style="margin-bottom: 10px;">• Red Velvet com ninho</li>
+                                <li style="margin-bottom: 10px;">• Brigadeiro nobre</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Informações Adicionais de Páscoa -->
+        <div class="row justify-content-center mt-3 mb-5">
+            <div class="col-12 text-center">
+                <div class="special-card p-4">
+                    <h4>Informações de Encomendas</h4>
+                    <p>Faça sua encomenda com antecedência para garantir disponibilidade.</p>
+                    <div class="d-flex justify-content-center">
+                        <a href="https://wa.me/5538998983072?text=Olá,%20gostaria%20de%20fazer%20uma%20encomenda%20para%20Páscoa" class="direct-contact-btn" style="background-color: #00E676; display: inline-flex; align-items: center; padding: 10px 20px; font-weight: 600; text-decoration: none; color: white; border-radius: 30px; transition: all 0.3s ease; box-shadow: 0 4px 8px rgba(0,0,0,0.1); margin: 10px;">
+                            <i class="bi bi-whatsapp" style="font-size: 1.2rem; margin-right: 10px;"></i> Encomendas via WhatsApp: (38) 99898-3072
+                        </a>
+                    </div>
+                    <p class="mt-3 mb-0"><small>Instagram - @jiji_confeitaria</small></p>
+                </div>
+            </div>
+        </div>
+
         <div id="bolos-produtos" class="row justify-content-center mt-5">
             <div class="col-12 text-center mb-4">
                 <h3>Bolos tradicionais</h3>
@@ -1124,6 +1273,27 @@
                         <p class="text-muted">Nosso delicioso cinnamoon roll com massa macia e recheio generoso de canela.</p>
                         <p class="product-price">R$ 19,90 (unidade)</p>
                         <a href="https://wa.me/5538998983072?text=Olá,%20gostaria%20de%20encomendar%20Cinnamoon%20Roll%20Tradicional" class="btn btn-order">Encomendar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cheesecake Section -->
+        <div class="row justify-content-center mt-5">
+            <div class="col-12 text-center mb-4" id="cheesecake-section">
+                <h3>Cheesecakes</h3>
+                <p class="text-muted">Cheesecakes cremosos feitos com ingredientes selecionados</p>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="product-card h-100">
+                    <img src="fotosJijiPatisserie/realCheesecake.png" alt="Cheesecake Tradicional" class="product-image">
+                    <div class="product-info">
+                        <span class="product-tag">Cheesecake</span>
+                        <h4>Cheesecake Tradicional</h4>
+                        <p class="text-muted">Delicioso cheesecake com base crocante de biscoito e cobertura de frutas vermelhas.</p>
+                        <p class="product-price">R$ 59,90</p>
+                        <a href="https://wa.me/5538998983072?text=Olá,%20gostaria%20de%20encomendar%20um%20Cheesecake%20Tradicional" class="btn btn-order">Encomendar</a>
                     </div>
                 </div>
             </div>
