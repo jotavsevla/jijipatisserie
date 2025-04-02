@@ -748,6 +748,51 @@
             margin-top: 20px !important;
             display: block !important;
         }
+
+        /* Garantir que elementos importantes sejam sempre visíveis */
+        .visible-always {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+
+        .visible-always {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+
+        /* Melhorar a responsividade em dispositivos móveis */
+        @media (max-width: 768px) {
+            .products {
+                padding: 2rem 0;
+            }
+
+            /* Garantir que os cards de produtos sejam visíveis */
+            .product-card {
+                display: block !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+            }
+
+            /* Ajustar tamanho das colunas em dispositivos móveis */
+            .col-md-4 {
+                width: 100%;
+                margin-bottom: 1.5rem;
+            }
+
+            /* Fazer botões de encomendar mais visíveis */
+            .btn-order {
+                display: block !important;
+                width: 100%;
+                margin-top: 15px !important;
+            }
+        }
+
+        /* Modificação para o observer de animações */
+        .fade-in.show,
+        .fade-in.visible-mobile {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
     </style>
 </head>
 <body>
@@ -919,7 +964,7 @@
 </section>
 
 <!-- Products Section -->
-<section class="products fade-in" id="products">
+<section class="products visible-always" id="products">
     <div class="container">
         <h2 class="h1 text-center mb-5">Nossos Produtos</h2>
 
@@ -1452,15 +1497,34 @@
 <script>
     // Animações ao scroll
     document.addEventListener('DOMContentLoaded', function() {
+        // Código existente para animações
         const fadeElements = document.querySelectorAll('.fade-in');
+
+        // Em dispositivos móveis, tornar elementos importantes imediatamente visíveis
+        if (window.innerWidth <= 768) {
+            document.querySelector('#products').classList.add('visible-mobile');
+
+            // Adicionar classe visible-mobile a todos os elementos dentro da seção produtos
+            document.querySelectorAll('#products .fade-in, #products .product-card, #products .row, #products .col-md-4')
+                .forEach(el => {
+                    el.classList.add('visible-mobile');
+                });
+        }
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('show');
+
+                    // Para dispositivos móveis, tornar todos os filhos também visíveis
+                    if (window.innerWidth <= 768 && entry.target.id === 'products') {
+                        entry.target.querySelectorAll('.fade-in').forEach(el => {
+                            el.classList.add('show');
+                        });
+                    }
                 }
             });
-        }, { threshold: 0.1 });
+        }, { threshold: 0.1, rootMargin: '0px 0px -100px 0px' }); // Aumentar a margem para detectar mais cedo
 
         fadeElements.forEach(element => {
             observer.observe(element);
@@ -1476,6 +1540,8 @@
                 backToTopButton.classList.remove('show');
             }
         });
+
+
 
         backToTopButton.addEventListener('click', function() {
             window.scrollTo({
