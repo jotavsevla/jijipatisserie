@@ -725,7 +725,7 @@
             text-decoration: none;
             color: inherit;
         }
-<!-- Introdução do XGOHORSE -->
+/*<!-- Introdução do XGOHORSE -->
         /* Seletores mais específicos para sobrescrever qualquer outro estilo */
         .product-card .product-info .product-price {
             margin-bottom: 25px !important;
@@ -932,7 +932,7 @@
                 </div>
             </div>
         </div>
-
+        
         <!-- Conteúdo Datas Especiais -->
         <div class="special-content" id="datas-content">
             <div class="row">
@@ -953,14 +953,28 @@
                         <h3>Bolos de Natal</h3>
                         <p>Tradicionais e deliciosos bolos natalinos com frutas cristalizadas, nozes e especiarias, deco
                             rados com temas festivos.</p>
-                        <p>Reservas disponíveis a partir de novembro.</p>
-                        <p class="product-price">A partir de R$ 169,90</p>
-                        <a href="https://wa.me/5538998983075?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20os%20Bolos%20de%20Natal" class="btn btn-order">Reservar</a>
+                            <p>Reservas disponíveis a partir de novembro.</p>
+                            <p class="product-price">A partir de R$ 169,90</p>
+                            <a href="https://wa.me/5538998983075?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20os%20Bolos%20de%20Natal" class="btn btn-order">Reservar</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+        <div class="row justify-content-center mt-3 mb-5">
+            <div class="col-12 text-center">
+                <div class="special-card p-4">
+                    <h4>Informações de Encomendas</h4>
+                    <p>Faça sua encomenda com antecedência para garantir disponibilidade.</p>
+                    <div class="d-flex justify-content-center">
+                        <a href="https://wa.me/5538998983075?text=Olá,%20gostaria%20de%20fazer%20uma%20encomenda%20para%20Páscoa" class="direct-contact-btn" style="background-color: #00E676; display: inline-flex; align-items: center; padding: 10px 20px; font-weight: 600; text-decoration: none; color: white; border-radius: 30px; transition: all 0.3s ease; box-shadow: 0 4px 8px rgba(0,0,0,0.1); margin: 10px;">
+                            <i class="bi bi-whatsapp" style="font-size: 1.2rem; margin-right: 10px;"></i> Encomendas via WhatsApp: (38) 99898-3075
+                        </a>
+                    </div>
+                    <p class="mt-3 mb-0"><small>Instagram - @jiji_confeitaria</small></p>
+                </div>
+            </div>
+        </div>
 </section>
 
 <!-- Products Section -->
@@ -970,107 +984,7 @@
 
         <!-- Primeira linha: 3 itens centralizados -->
         <div class="row text-center justify-content-center mb-5">
-            <!-- Páscoa com badge -->
-            <div class="col-md-4 mb-4 mb-md-0 position-relative">
-                <!-- Easter icon and content -->
-                <a href="#pascoa-section" class="icon-link">
-                    <div style="position: absolute; top: -15px; left: -30px; width: 120px; height: 30px; z-index: 2;">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 30">
-                            <defs>
-                                <!-- Gradiente animado com distribuição mais equilibrada -->
-                                <linearGradient id="pixelRainbow" x1="0%" y1="0%" x2="100%" y2="0%">
-                                    <!-- Cada cor tem um offset que se move através do badge -->
-                                    <stop offset="0%" stop-color="#FF0000">
-                                        <animate attributeName="offset" values="-0.8;1.2;-0.8" dur="6s" repeatCount="indefinite" />
-                                    </stop>
-                                    <stop offset="16.6%" stop-color="#FF9900">
-                                        <animate attributeName="offset" values="-0.6;1.4;-0.6" dur="6s" repeatCount="indefinite" />
-                                    </stop>
-                                    <stop offset="33.3%" stop-color="#FFFF00">
-                                        <animate attributeName="offset" values="-0.4;1.6;-0.4" dur="6s" repeatCount="indefinite" />
-                                    </stop>
-                                    <stop offset="50%" stop-color="#33CC33">
-                                        <animate attributeName="offset" values="-0.2;1.8;-0.2" dur="6s" repeatCount="indefinite" />
-                                    </stop>
-                                    <stop offset="66.6%" stop-color="#3399FF">
-                                        <animate attributeName="offset" values="0;2;0" dur="6s" repeatCount="indefinite" />
-                                    </stop>
-                                    <stop offset="83.3%" stop-color="#9933FF">
-                                        <animate attributeName="offset" values="0.2;2.2;0.2" dur="6s" repeatCount="indefinite" />
-                                    </stop>
-                                    <stop offset="100%" stop-color="#FF0066">
-                                        <animate attributeName="offset" values="0.4;2.4;0.4" dur="6s" repeatCount="indefinite" />
-                                    </stop>
-                                </linearGradient>
-                            </defs>
-
-                            <!-- Fundo pixelado com formato de botão/badge -->
-                            <rect x="4" y="4" width="112" height="22" fill="url(#pixelRainbow)" />
-
-                            <!-- Cantos arredondados (pixelados) -->
-                            <rect x="3" y="5" width="1" height="20" fill="url(#pixelRainbow)" />
-                            <rect x="2" y="6" width="1" height="18" fill="url(#pixelRainbow)" />
-                            <rect x="1" y="8" width="1" height="14" fill="url(#pixelRainbow)" />
-
-                            <rect x="116" y="5" width="1" height="20" fill="url(#pixelRainbow)" />
-                            <rect x="117" y="6" width="1" height="18" fill="url(#pixelRainbow)" />
-                            <rect x="118" y="8" width="1" height="14" fill="url(#pixelRainbow)" />
-
-                            <!-- LIMITADO - Palavra reposicionada +11px para direita e +2px para baixo -->
-                            <!-- Letra L -->
-                            <rect x="29" y="10" width="2" height="10" fill="white" />
-                            <rect x="31" y="18" width="3" height="2" fill="white" />
-
-                            <!-- Letra I -->
-                            <rect x="36" y="10" width="2" height="10" fill="white" />
-
-                            <!-- Letra M - com pixels internos finos e corrigidos -->
-                            <rect x="40" y="10" width="2" height="10" fill="white" />
-                            <rect x="45" y="10" width="2" height="10" fill="white" />
-                            <rect x="43" y="13" width="1" height="2" fill="white" />
-                            <rect x="42" y="11" width="1" height="2" fill="white" />
-                            <rect x="44" y="11" width="1" height="2" fill="white" />
-
-                            <!-- Letra I - Conectada logo após o M -->
-                            <rect x="49" y="10" width="2" height="10" fill="white" />
-
-                            <!-- Letra T - Conectada -->
-                            <rect x="53" y="10" width="7" height="2" fill="white" />
-                            <rect x="56" y="10" width="2" height="10" fill="white" />
-
-                            <!-- Letra A - Conectada -->
-                            <rect x="62" y="10" width="2" height="10" fill="white" />
-                            <rect x="68" y="10" width="2" height="10" fill="white" />
-                            <rect x="64" y="10" width="4" height="2" fill="white" />
-                            <rect x="64" y="14" width="4" height="2" fill="white" />
-
-                            <!-- Letra D - Conectada -->
-                            <rect x="72" y="10" width="2" height="10" fill="white" />
-                            <rect x="74" y="10" width="3" height="2" fill="white" />
-                            <rect x="77" y="12" width="2" height="6" fill="white" />
-                            <rect x="74" y="18" width="3" height="2" fill="white" />
-
-                            <!-- Letra O - Conectada -->
-                            <rect x="81" y="10" width="2" height="10" fill="white" />
-                            <rect x="87" y="10" width="2" height="10" fill="white" />
-                            <rect x="83" y="10" width="4" height="2" fill="white" />
-                            <rect x="83" y="18" width="4" height="2" fill="white" />
-
-                            <!-- Brilho animado que se move sobre o badge com timing diferente -->
-                            <rect width="15" height="22" fill="white" opacity="0.15" x="4" y="4">
-                                <animate
-                                        attributeName="x"
-                                        values="4;102;4"
-                                        dur="3.5s"
-                                        repeatCount="indefinite" />
-                            </rect>
-                        </svg>
-                    </div>
-                    <div class="cat-icon cupcake"></div>
-                    <h3>Páscoa</h3>
-                    <p>Criações especiais para celebrar a Páscoa com doçura e alegria para toda a família.</p>
-                </a>
-            </div>
+            
 
             <!-- Bolos -->
             <div class="col-md-4 mb-4 mb-md-0">
@@ -1111,133 +1025,9 @@
                 </a>
             </div>
         </div>
-
-        <!-- Produtos específicos -->
-        <!-- Páscoa Section -->
-        <div class="row justify-content-center mt-5">
-            <div class="col-12 text-center mb-4" id="pascoa-section">
-                <h3>Páscoa Especial 2025</h3>
-                <p class="text-muted">Deixe seu dia mais especial com nossas delícias artesanais</p>
-            </div>
-
-            <!-- Produto 1: Ovos Recheados -->
-            <div class="col-md-4 mb-4">
-                <div class="product-card h-100">
-                    <img src="fotosJijiPatisserie/ovoGrande.jpg" alt="Ovos Recheados" class="product-image">
-                    <div class="product-info">
-                        <span class="product-tag">Páscoa</span>
-                        <h4>Ovos Recheados</h4>
-                        <p class="text-muted">Deliciosos ovos artesanais em diferentes tamanhos com recheios especiais à sua escolha.</p>
-                        <p class="product-price">
-                            <small>Tamanhos e valores:</small><br>
-                            150g - R$50,00<br>
-                            250g - R$70,00<br>
-                            350g - R$120,00
-                        </p>
-                        <a href="https://wa.me/5538998983075?text=Olá,%20gostaria%20de%20encomendar%20Ovos%20de%20Páscoa%20Recheados" class="btn btn-order">Encomendar</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Produto 2: Kit Mini Ovinhos -->
-            <div class="col-md-4 mb-4">
-                <div class="product-card h-100">
-                    <img src="fotosJijiPatisserie/ovos.jpg" alt="Kit Mini Ovinhos" class="product-image">
-                    <div class="product-info">
-                        <span class="product-tag">Páscoa</span>
-                        <h4>Kit Mini Ovinhos</h4>
-                        <p class="text-muted">Mini ovinhos de chocolate decorados, perfeitos para presentear ou para mesa de Páscoa.</p>
-                        <p class="product-price">
-                            <small>50g por unidade</small><br>
-                            4 un - R$40,00<br>
-                            7 un - R$80,00<br>
-                            10 un - R$95,00
-                        </p>
-                        <a href="https://wa.me/5538998983075?text=Olá,%20gostaria%20de%20encomendar%20um%20Kit%20Mini%20Ovinhos" class="btn btn-order">Encomendar</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Produto 3: Coelhinho Recheado -->
-            <div class="col-md-4 mb-4">
-                <div class="product-card h-100">
-                    <img src="fotosJijiPatisserie/coelhoChocolate.jpg" alt="Coelhinho Recheado" class="product-image">
-                    <div class="product-info">
-                        <span class="product-tag">Páscoa</span>
-                        <h4>Coelhinho Recheado</h4>
-                        <p class="text-muted">Adoráveis coelhinhos de chocolate recheados, uma opção divertida para a Páscoa.</p>
-                        <p class="product-price">
-                            <small>70g por unidade</small><br>
-                            4 un - R$50,00<br>
-                            7 un - R$70,00<br>
-                            10 un - R$90,00
-                        </p>
-                        <a href="https://wa.me/5538998983075?text=Olá,%20gostaria%20de%20encomendar%20Coelhinhos%20Recheados" class="btn btn-order">Encomendar</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Seção de Opções de Chocolate e Recheio -->
-        <!-- Seção de Opções - Estilo da Imagem -->
-        <!-- Seção de Opções - Com espaçamento melhorado -->
-        <div class="row justify-content-center mt-4 mb-4">
-            <!-- Caixa de Casquinha -->
-            <div class="col-md-5 mb-3">
-                <div class="special-card p-4 h-100" style="background-color: white; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
-                    <h4 class="text-center mb-4" style="font-weight: 600; color: #333;">Escolha sua Casquinha</h4>
-                    <div class="text-center">
-                        <p style="margin-bottom: 10px;">• Chocolate nobre ao leite</p>
-                        <p style="margin-bottom: 10px;">• Chocolate nobre branco</p>
-                        <p style="margin-bottom: 10px;">• Chocolate meio amargo</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Espaço entre as caixas -->
-            <div class="col-md-1"></div>
-
-            <!-- Caixa de Recheios -->
-            <div class="col-md-5 mb-3">
-                <div class="special-card p-4 h-100" style="background-color: white; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
-                    <h4 class="text-center mb-4" style="font-weight: 600; color: #333;">Opções de Recheio</h4>
-                    <div class="row">
-                        <div class="col-6">
-                            <ul class="list-unstyled" style="padding-left: 15px;">
-                                <li style="margin-bottom: 10px;">• Pistache</li>
-                                <li style="margin-bottom: 10px;">• Prestígio</li>
-                                <li style="margin-bottom: 10px;">• Maracujá</li>
-                                <li style="margin-bottom: 10px;">• Limão</li>
-                            </ul>
-                        </div>
-                        <div class="col-6">
-                            <ul class="list-unstyled" style="padding-left: 15px;">
-                                <li style="margin-bottom: 10px;">• Pão de mel</li>
-                                <li style="margin-bottom: 10px;">• Ninho com Nutella&reg;</li>
-                                <li style="margin-bottom: 10px;">• Red Velvet com ninho</li>
-                                <li style="margin-bottom: 10px;">• Brigadeiro nobre</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
+        
+    
         <!-- Informações Adicionais de Páscoa -->
-        <div class="row justify-content-center mt-3 mb-5">
-            <div class="col-12 text-center">
-                <div class="special-card p-4">
-                    <h4>Informações de Encomendas</h4>
-                    <p>Faça sua encomenda com antecedência para garantir disponibilidade.</p>
-                    <div class="d-flex justify-content-center">
-                        <a href="https://wa.me/5538998983075?text=Olá,%20gostaria%20de%20fazer%20uma%20encomenda%20para%20Páscoa" class="direct-contact-btn" style="background-color: #00E676; display: inline-flex; align-items: center; padding: 10px 20px; font-weight: 600; text-decoration: none; color: white; border-radius: 30px; transition: all 0.3s ease; box-shadow: 0 4px 8px rgba(0,0,0,0.1); margin: 10px;">
-                            <i class="bi bi-whatsapp" style="font-size: 1.2rem; margin-right: 10px;"></i> Encomendas via WhatsApp: (38) 99898-3075
-                        </a>
-                    </div>
-                    <p class="mt-3 mb-0"><small>Instagram - @jiji_confeitaria</small></p>
-                </div>
-            </div>
-        </div>
 
         <div id="bolos-produtos" class="row justify-content-center mt-5">
             <div class="col-12 text-center mb-4">
@@ -1285,7 +1075,7 @@
         <!-- Brownies Row -->
         <div class="row justify-content-center mt-5">
             <div class="col-12 text-center mb-4" id="brownies-section">
-                <h3>Brownies & Sobremesas</h3>
+                <h3>Cookies & Brownies</h3>
                 <p class="text-muted">Nossas delícias para qualquer momento do dia</p>
             </div>
 
