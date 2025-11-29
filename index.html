@@ -1,1418 +1,2389 @@
-<!DOCTYPE html>
+<!doctype html>
 <!--   SITE FEITO PARA A MINHA AMADA NAMORADA -->
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Confeitaria Jiji - Bolos Artesanais</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" href="fotosJijiPatisserie/jiji.png" sizes="64x64">
-    <link rel="icon" type="image/png" href="fotosJijiPatisserie/jiji.png" sizes="32x32">
-    <link rel="apple-touch-icon" href="fotosJijiPatisserie/jiji.png">
-    <link rel="shortcut icon" href="fotosJijiPatisserie/jiji.png">
-    <style>
-        :root {
-            --jiji-black: #000000;
-            --jiji-turquoise: #4ECDC4;
-            --jiji-yellow: #FFD166;
-            --jiji-pink: #FF6B6B;
-            --jiji-brown: #A67C52;
-            --jiji-light: #FFF9EC;
-            --jiji-cream: #FFF0DB;
-        }
-
-        body {
-            font-family:'Century Gothic', 'Nunito', sans-serif;
-            background-color: var(--jiji-light);
-            color: #333;
-            overflow-x: hidden;
-        }
-
-        h1, h2, h3, h4, h5 {
-            font-family: 'Century Gothic','Fredoka', sans-serif;
-        }
-
-        p{
-            font-family: "Century Gothic", sans-serif;
-            line-height: 1.6;
-        }
-
-        /* Para manter a fonte Nunito em elementos de navegação e botões */
-        .navbar-nav .nav-link,
-        .btn,
-        .product-tag,
-        .product-price {
-            font-family: 'Nunito', sans-serif;
-        }
-
-        /* Header Section */
-        .header {
-            position: relative;
-            background-image: url('fotosJijiPatisserie/Fundo de Aniversário.webp');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            padding: 4rem 0;
-            margin-bottom: 2rem;
-            overflow: hidden;
-        }
-
-        .header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(255, 240, 219, 0.85);
-            backdrop-filter: blur(5px);
-            z-index: 1;
-        }
-
-
-        .header::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 20px;
-            background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h20v20H0V0zm10 10h10v10H10V10zM0 10h10v10H0V10z' fill='%23000000' fill-opacity='0.05'/%3E%3C/svg%3E");
-            background-size: 20px 20px;
-        }
-        .header .container {
-            position: relative;
-            z-index: 2;
-        }
-
-        /* Logo responsivo */
-        .header .logo-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 1.5rem;
-        }
-
-        .header img.logo {
-            max-width: 100%;
-            height: auto;
-            transform-origin: center center;
-            transform: scale(1.2);
-        }
-
-        .featured-cake {
-            max-width: 350px;
-            height: 350px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid var(--jiji-black);
-            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
-            margin: 0 auto;
-            display: block;
-        }
-
-        @media (min-width: 768px) {
-            .header img.logo {
-                max-width: 400px;
-                transform: scale(1.5);
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes"
+        />
+        <meta name="theme-color" content="#000000" />
+        <title>Confeitaria Jiji - Bolos Artesanais</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Nunito:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            href="fotosJijiPatisserie/jiji.png"
+            sizes="64x64"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            href="fotosJijiPatisserie/jiji.png"
+            sizes="32x32"
+        />
+        <link rel="apple-touch-icon" href="fotosJijiPatisserie/jiji.png" />
+        <link rel="shortcut icon" href="fotosJijiPatisserie/jiji.png" />
+        <style>
+            :root {
+                --jiji-black: #000000;
+                --jiji-turquoise: #4ecdc4;
+                --jiji-yellow: #ffd166;
+                --jiji-pink: #ff6b6b;
+                --jiji-brown: #a67c52;
+                --jiji-light: #fff9ec;
+                --jiji-cream: #fff0db;
+                --jiji-bg-offwhite: #faf8f5;
+                --jiji-card-offwhite: #fdfcfa;
             }
-        }
 
-        @media (min-width: 992px) {
-            .header img.logo {
-                max-width: 450px;
+            * {
+                box-sizing: border-box;
             }
-        }
 
-        .header img.main-cake {
-            max-width: 85%; /* Reduzido de 100% */
-            max-height: 450px; /* Define uma altura máxima */
-            border-radius: 50%;
-            border: 4px solid black;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
-            transition: transform 0.3s ease;
-            object-fit: cover;
-        }
-
-        .header img.main-cake:hover {
-            transform: scale(1.03);
-        }
-
-        /* Navegação fixa */
-        .navbar {
-            background-color: var(--jiji-black);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .navbar-nav .nav-link {
-            color: white;
-            font-weight: 600;
-            margin: 0 0.5rem;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            transition: all 0.3s ease;
-        }
-
-        .navbar-nav .nav-link:hover,
-        .navbar-nav .nav-link.active {
-            background-color: var(--jiji-turquoise);
-            color: white;
-        }
-
-        .navbar-toggler-icon {
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-        }
-
-        .navbar-toggler {
-            border-color: rgba(255,255,255,0.1);
-        }
-
-        /* Add a subtle white border around the logo to make it pop on black */
-        .navbar-brand img {
-            filter: drop-shadow(0 0 2px rgba(255,255,255,0.8));
-        }
-        /* About Section */
-        .about {
-            background-image: url('fotosJijiPatisserie/BakeryinStudio GhibliStyle.webp');
-            background-size: cover;
-            background-position: center;
-            padding: 5rem 0;
-            position: relative;
-            color: #fff;
-        }
-
-        .about::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-        }
-
-        .about .container {
-            position: relative;
-            z-index: 2;
-        }
-
-        .about-card {
-            background-color: var(--jiji-cream);
-            padding: 2.5rem;
-            border-radius: 12px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-            color: #333;
-            transition: transform 0.3s ease;
-        }
-
-        .about-card:hover {
-            transform: translateY(-5px);
-        }
-
-        /* Products Section */
-        .products {
-            padding: 5rem 0;
-            background-color: var(--jiji-light);
-        }
-
-        .cat-icon {
-            width: 90px;
-            height: 90px;
-            display: block;
-            margin: 0 auto 1rem;
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
-            position: relative;
-            transition: transform 0.3s ease;
-        }
-
-        .cat-icon:hover {
-            transform: translateY(-5px) scale(1.1);
-        }
-
-        .cat-icon.cake {
-            background-image: url("fotosJijiPatisserie/bolos.png");
-        }
-
-        .cat-icon.cupcake {
-            background-image: url("fotosJijiPatisserie/pascoa.png");
-            transform: scale(1.3);
-        }
-
-        .cat-icon.cupcake:hover {
-            transform: translateY(-5px) scale(1.4);
-        }
-        .cat-icon.cinnamoon {
-            background-image: url("fotosJijiPatisserie/CinnamonRollPixelArt.png");
-        }
-
-        .cat-icon.cookie {
-            background-image: url("fotosJijiPatisserie/cheesecake.png");
-            transform: scale(1.3);
-        }
-
-        .cat-icon.cookie:hover {
-            transform: translateY(-5px) scale(1.4);
-        }
-
-        .cat-icon.brownie {
-            background-image: url("fotosJijiPatisserie/brownie.png");
-            transform: scale(1.3);
-        }
-
-        .cat-icon.brownie:hover {
-            transform: translateY(-5px) scale(1.4);
-        }
-        .cat-icon.cinnamoon:hover{
-            transform: translateY(-5px) scale(1.1);
-        }
-
-        .product-card {
-            background-color: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            margin-bottom: 2rem;
-            transition: all 0.3s ease;
-            height: 100%;
-        }
-
-        .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-        }
-
-        .product-image {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .product-card:hover .product-image {
-            transform: scale(1.05);
-        }
-
-        .product-info {
-            padding: 1.5rem;
-        }
-
-        .product-tag {
-            display: inline-block;
-            background-color: var(--jiji-turquoise);
-            color: white;
-            padding: 0.25rem 0.75rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            margin-bottom: 0.5rem;
-            transition: background-color 0.3s ease;
-        }
-
-        .product-tag:hover {
-            background-color: var(--jiji-pink);
-        }
-
-        .product-price {
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: var(--jiji-black);
-            position: relative;
-            display: inline-block;
-            margin-bottom: 20px; /* Força um espaço maior após o preço */
-        }
-
-        .product-price::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -2px;
-            left: 0;
-            background-color: var(--jiji-pink);
-            transition: width 0.3s ease;
-        }
-
-        .product-card:hover .product-price::after {
-            width: 100%;
-        }
-
-        /* Botão de ação */
-        .btn-order {
-            background-color: var(--jiji-pink);
-            color: white;
-            border-radius: 25px;
-            padding: 0.5rem 1.5rem;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: none;
-            margin-top: 15px ; /* Adiciona espaço antes do botão */
-        }
-
-        .btn-order:hover {
-            background-color: var(--jiji-turquoise);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        /* Special Products */
-        .special-products {
-            padding: 5rem 0;
-            background-color: var(--jiji-pink);
-            position: relative;
-        }
-
-        .special-products::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 30px;
-            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h20v20H0V0zm10 10h10v10H10V10zM0 10h10v10H0V10z' fill='%23FFFFFF' fill-opacity='0.2'/%3E%3C/svg%3E");
-            transform: translateY(-100%);
-        }
-
-        .special-title {
-            color: white;
-            font-size: 2.5rem;
-            margin-bottom: 2.5rem;
-            text-align: center;
-            position: relative;
-            display: inline-block;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .special-title::after {
-            content: '';
-            position: absolute;
-            width: 80px;
-            height: 3px;
-            background-color: white;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .special-card {
-            background-color: white;
-            border-radius: 12px;
-            overflow: hidden;
-            padding: 2rem;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-            position: relative;
-            transition: transform 0.3s ease;
-            height: 100%;
-        }
-
-        .special-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .special-image.padded-cake {
-            padding: 10px 20px;
-            background-color: white;
-            margin: 0 auto 25px;
-            display: block;
-            max-width: 90%;
-        }
-
-        .special-image {
-            width: 100%;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            margin-bottom: 1.5rem;
-            transition: transform 0.5s ease;
-        }
-
-        .special-card:hover .special-image {
-            transform: scale(1.03);
-        }
-
-        /* Removed special-badge */
-
-        /* Category tabs */
-        .category-tabs {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 2rem;
-        }
-
-        .category-tab {
-            padding: 0.5rem 1.5rem;
-            margin: 0 0.5rem;
-            background-color: rgba(255, 255, 255, 0.8);
-            border-radius: 20px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-weight: 600;
-        }
-
-        .category-tab.active {
-            background-color: var(--jiji-turquoise);
-            color: white;
-        }
-
-        .category-tab:hover:not(.active) {
-            background-color: var(--jiji-cream);
-        }
-
-        .special-content {
-            display: none;
-        }
-
-        .special-content.active {
-            display: block;
-        }
-
-        /* Contact Section */
-        .contact {
-            padding: 5rem 0;
-            background-color: var(--jiji-black);
-            color: white;
-            position: relative;
-        }
-
-        .contact-card {
-            background-color: white;
-            padding: 2.5rem;
-            border-radius: 12px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.25);
-            color: #333;
-            transition: transform 0.3s ease;
-        }
-
-        .contact-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .contact-info {
-            padding: 1.5rem;
-            transition: transform 0.3s ease;
-        }
-
-        .contact-info:hover {
-            transform: translateX(5px);
-        }
-
-        .contact-icon {
-            color: var(--jiji-turquoise);
-            font-size: 1.5rem;
-            margin-right: 1rem;
-            transition: transform 0.3s ease;
-        }
-
-        .contact-info:hover .contact-icon {
-            transform: scale(1.2);
-        }
-
-        .direct-contact-btn {
-            background-color: var(--jiji-turquoise);
-            color: white;
-            border-radius: 25px;
-            padding: 0.75rem 2rem;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: none;
-            margin: 0.5rem 0;
-            display: inline-block;
-            text-decoration: none;
-        }
-
-        .direct-contact-btn:hover {
-            background-color: var(--jiji-pink);
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            color: white;
-        }
-
-        /* Footer */
-        .footer {
-            background-color: var(--jiji-light);
-            padding: 4rem 0 1.5rem;
-            color: #555;
-            text-align: center;
-            position: relative;
-        }
-
-        .footer::before {
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 10'%3E%3Crect width='10' height='10' fill='%23002395'/%3E%3Crect x='10' width='10' height='10' fill='%23FFFFFF'/%3E%3Crect x='20' width='10' height='10' fill='%23ED2939'/%3E%3C/svg%3E");
-            background-size: 30px 10px;
-        }
-
-        .footer-logo {
-            max-width: 150px;
-            margin-bottom: 1.5rem;
-            transition: transform 0.5s ease;
-        }
-
-        .footer-logo:hover {
-            transform: scale(1.1) rotate(5deg);
-        }
-
-        .cake-showcase {
-            display: none;
-        }
-
-        .cake-showcase img.main-cake {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-            transform: scale(0.95);
-            transition: transform 0.5s ease;
-        }
-
-        .cake-showcase::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle, rgba(255,255,255,0) 60%, var(--jiji-cream) 100%);
-            z-index: 1;
-        }
-
-        .main-cake {
-            max-width: 100%;
-            display: block;
-            transform: scale(0.95);
-            transition: transform 0.5s ease;
-        }
-
-        .cake-showcase:hover .main-cake {
-            transform: scale(1);
-        }
-
-        /* Social media icons */
-        .social-icons {
-            margin-bottom: 1.5rem;
-        }
-
-        .social-icons a {
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background-color: var(--jiji-turquoise);
-            color: white;
-            margin: 0 0.5rem;
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
-        }
-
-        .social-icons a:hover {
-            background-color: var(--jiji-pink);
-            transform: translateY(-3px);
-        }
-
-        /* Botão de voltar ao topo */
-        .back-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 40px;
-            height: 40px;
-            background-color: var(--jiji-pink);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 1.2rem;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-            z-index: 1000;
-            border: none;
-        }
-
-        .back-to-top.show {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .back-to-top:hover {
-            background-color: var(--jiji-turquoise);
-            transform: translateY(-3px);
-        }
-
-        /* Animações ao scroll */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-
-        .fade-in.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Responsividade aprimorada */
-        @media (max-width: 992px) {
+            html {
+                overflow-x: clip;
+                overflow-y: scroll;
+                width: 100%;
+                height: 100%;
+                background-color: var(--jiji-light);
+                -webkit-overflow-scrolling: touch;
+            }
+
+            body {
+                font-family: "Century Gothic", "Nunito", sans-serif;
+                background-color: var(--jiji-light);
+                color: #333;
+                overflow-x: clip;
+                overflow-y: scroll;
+                width: 100vw;
+                max-width: 100vw;
+                position: relative;
+                margin: 0;
+                padding: 0;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .container,
+            .container-fluid {
+                max-width: 100%;
+                overflow-x: hidden !important;
+                overflow-y: visible !important;
+            }
+
+            .row {
+                margin-left: 0;
+                margin-right: 0;
+                max-width: 100%;
+                overflow-x: hidden !important;
+                overflow-y: visible !important;
+            }
+
+            section {
+                overflow-x: hidden !important;
+                overflow-y: visible !important;
+            }
+
+            /* Prevenir scroll horizontal em todos os elementos */
+            div:not(body):not(html) {
+                overflow-x: clip !important;
+            }
+
+            /* Conter transformações e evitar overflow */
+            .product-card,
+            .special-card,
+            .about-card,
+            .contact-card {
+                contain: layout style paint;
+                isolation: isolate;
+            }
+
+            /* Conter imagens e ícones */
+            img,
+            .cat-icon,
+            .product-image,
+            .special-image {
+                max-width: 100%;
+                display: block;
+            }
+
+            /* Evitar overflow em colunas */
+            .col,
+            [class*="col-"] {
+                min-width: 0;
+                contain: layout;
+            }
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5 {
+                font-family: "Century Gothic", "Fredoka", sans-serif;
+            }
+
+            p {
+                font-family: "Century Gothic", sans-serif;
+                line-height: 1.6;
+            }
+
+            /* Para manter a fonte Nunito em elementos de navegação e botões */
+            .navbar-nav .nav-link,
+            .btn,
+            .product-tag,
+            .product-price {
+                font-family: "Nunito", sans-serif;
+            }
+
+            /* Header Section */
             .header {
-                padding: 2rem 0;
+                position: relative;
+                padding: 1rem 0 8rem 0;
+                margin-bottom: 0;
+                overflow-x: clip;
+                overflow-y: visible;
+                min-height: 550px;
+                display: flex;
+                align-items: flex-start;
+                padding-top: 2rem;
+                width: 100%;
+                max-width: 100vw;
+                background-color: var(--jiji-cream);
+                contain: layout style;
             }
-        }
 
-        @media (max-width: 768px) {
-            h1.display-4 {
-                font-size: 2.5rem;
+            .header::after {
+                content: "";
+                position: absolute;
+                bottom: -150px;
+                left: 0;
+                width: 100%;
+                height: 200px;
+                background: linear-gradient(
+                    to bottom,
+                    rgba(255, 240, 219, 0.1) 0%,
+                    rgba(255, 240, 219, 0.3) 20%,
+                    rgba(255, 240, 219, 0.5) 40%,
+                    rgba(255, 240, 219, 0.7) 60%,
+                    rgba(255, 240, 219, 0.9) 80%,
+                    var(--jiji-cream) 100%
+                );
+                z-index: 2;
+                pointer-events: none;
             }
 
-            .header {
-                padding: 2rem 0;
+            .header .container {
+                position: relative;
+                z-index: 2;
+                max-width: 100%;
+                overflow: clip;
+                contain: layout;
+            }
+
+            /* Carrossel de fundo do header */
+            .header-carousel {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 0;
+                pointer-events: none;
+                touch-action: none;
+            }
+
+            .header-carousel .swiper {
+                width: 100%;
+                height: 100%;
+                pointer-events: none;
+                touch-action: none;
+            }
+
+            .header-carousel .swiper-slide {
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+
+            .header-carousel .swiper-slide::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(255, 240, 219, 0.75);
+                backdrop-filter: blur(3px);
+                z-index: 1;
+            }
+
+            /* Logo responsivo */
+            .header .logo-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-bottom: 0.5rem;
+                margin-top: 0;
+            }
+
+            .header img.logo {
+                max-width: 100%;
+                height: auto;
+                transform-origin: center center;
+                transform: scale(1);
+            }
+
+            .featured-cake {
+                max-width: 350px;
+                height: 350px;
+                border-radius: 50%;
+                object-fit: cover;
+                border: 3px solid var(--jiji-black);
+                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+                margin: 0 auto;
+                display: block;
+            }
+
+            @media (min-width: 768px) {
+                .header img.logo {
+                    max-width: 350px;
+                    transform: scale(1.2);
+                }
+
+                .header {
+                    padding-top: 1.5rem;
+                }
+            }
+
+            @media (min-width: 992px) {
+                .header img.logo {
+                    max-width: 400px;
+                    transform: scale(1.3);
+                }
+
+                .header {
+                    padding-top: 2rem;
+                }
+            }
+
+            .header img.main-cake {
+                max-width: 85%; /* Reduzido de 100% */
+                max-height: 450px; /* Define uma altura máxima */
+                border-radius: 50%;
+                border: 4px solid black;
+                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+                transition: transform 0.3s ease;
+                object-fit: cover;
+            }
+
+            .header img.main-cake:hover {
+                transform: scale(1.03);
+            }
+
+            /* Navegação fixa */
+            .navbar {
+                background-color: var(--jiji-black);
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+                position: sticky;
+                top: 0;
+                z-index: 1000;
+                width: 100%;
+                max-width: 100vw;
+                overflow: hidden;
+            }
+
+            .navbar-nav .nav-link {
+                color: white;
+                font-weight: 600;
+                margin: 0 0.5rem;
+                padding: 0.5rem 1rem;
+                border-radius: 20px;
+                transition: all 0.3s ease;
+            }
+
+            .navbar-nav .nav-link:hover,
+            .navbar-nav .nav-link.active {
+                background-color: var(--jiji-turquoise);
+                color: white;
+            }
+
+            .navbar-toggler-icon {
+                background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+            }
+
+            .navbar-toggler {
+                border-color: rgba(255, 255, 255, 0.1);
+            }
+
+            /* Add a subtle white border around the logo to make it pop on black */
+            .navbar-brand {
+                position: relative;
+                opacity: 0;
+                transform: translateY(-20px) scale(0.8);
+                transition: all 0.5s ease;
+            }
+
+            .navbar-brand.show {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+
+            .navbar-brand img {
+                filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6))
+                    drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
+                position: relative;
+                z-index: 1001;
+                transform: translateY(15px);
+                border-radius: 50%;
+                background: radial-gradient(
+                    circle,
+                    rgba(255, 255, 255, 0.15) 0%,
+                    rgba(255, 255, 255, 0.05) 50%,
+                    transparent 70%
+                );
+                padding: 5px;
+                transition: transform 0.3s ease;
+            }
+
+            .navbar-brand:hover img {
+                transform: translateY(15px) scale(1.1);
+            }
+
+            @media (max-width: 768px) {
+                .navbar-brand img {
+                    transform: translateY(12px);
+                    height: 35px;
+                }
+
+                .navbar-brand:hover img {
+                    transform: translateY(12px) scale(1.1);
+                }
+            }
+            /* About Section */
+            .about {
+                background-image: url("fotosJijiPatisserie/BakeryinStudio GhibliStyle.webp");
+                background-size: cover;
+                background-position: center;
+                padding: 5rem 0;
+                position: relative;
+                color: #fff;
+                width: 100%;
+                max-width: 100vw;
+                overflow: hidden;
+            }
+
+            .about::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.5);
+            }
+
+            .about .container {
+                position: relative;
+                z-index: 2;
+            }
+
+            .about-card {
+                background-color: var(--jiji-cream);
+                padding: 2.5rem;
+                border-radius: 12px;
+                box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+                color: #333;
+                transition: transform 0.3s ease;
+            }
+
+            .about-card:hover {
+                transform: translateY(-5px);
+            }
+
+            /* Products Section */
+            .products {
+                padding: 0 0 6rem 0;
+                background-color: var(--jiji-cream);
+                margin-bottom: 0;
+                position: relative;
+                width: 100%;
+                max-width: 100vw;
+                overflow: hidden;
             }
 
             .cat-icon {
-                width: 70px;
-                height: 70px;
+                width: 90px;
+                height: 90px;
+                display: block;
+                margin: 0 auto 1rem;
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+                position: relative;
+                transition: transform 0.3s ease;
             }
 
-            .special-title {
-                font-size: 2rem;
+            .cat-icon:hover {
+                transform: translateY(-5px) scale(1.1);
             }
 
-            .special-card {
+            .cat-icon.cake {
+                background-image: url("fotosJijiPatisserie/bolos.png");
+            }
+
+            .cat-icon.cupcake {
+                background-image: url("fotosJijiPatisserie/pascoa.png");
+                transform: scale(1.3);
+            }
+
+            .cat-icon.cupcake:hover {
+                transform: translateY(-5px) scale(1.4);
+            }
+            .cat-icon.cinnamoon {
+                background-image: url("fotosJijiPatisserie/CinnamonRollPixelArt.png");
+            }
+
+            .cat-icon.cookie {
+                background-image: url("fotosJijiPatisserie/cheesecake.png");
+                transform: scale(1.3);
+            }
+
+            .cat-icon.cookie:hover {
+                transform: translateY(-5px) scale(1.4);
+            }
+
+            .cat-icon.brownie {
+                background-image: url("fotosJijiPatisserie/brownie.png");
+                transform: scale(1.3);
+            }
+
+            .cat-icon.brownie:hover {
+                transform: translateY(-5px) scale(1.4);
+            }
+            .cat-icon.cinnamoon:hover {
+                transform: translateY(-5px) scale(1.1);
+            }
+
+            .product-card {
+                background-color: var(--jiji-card-offwhite);
+                border-radius: 12px;
+                overflow: hidden;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+                margin-bottom: 2rem;
+                transition: all 0.3s ease;
+                height: 100%;
+                max-width: 100%;
+            }
+
+            .product-card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            }
+
+            .product-image {
+                width: 100%;
+                max-width: 100%;
+                height: 220px;
+                object-fit: cover;
+                transition: transform 0.5s ease;
+            }
+
+            .product-card:hover .product-image {
+                transform: scale(1.05);
+            }
+
+            .product-info {
                 padding: 1.5rem;
             }
 
-            .category-tabs {
-                flex-wrap: wrap;
-            }
-
-            .category-tab {
+            .product-tag {
+                display: inline-block;
+                background-color: var(--jiji-turquoise);
+                color: white;
+                padding: 0.25rem 0.75rem;
+                border-radius: 20px;
+                font-size: 0.8rem;
                 margin-bottom: 0.5rem;
-            }
-        }
-
-        @media (max-width: 576px) {
-            h1.display-4 {
-                font-size: 2rem;
+                transition: background-color 0.3s ease;
             }
 
-            .header img.logo {
-                max-width: 200px;
+            .product-tag:hover {
+                background-color: var(--jiji-pink);
+            }
+
+            .product-price {
+                font-size: 1.2rem;
+                font-weight: bold;
+                color: var(--jiji-black);
+                position: relative;
+                display: inline-block;
+                margin-bottom: 20px; /* Força um espaço maior após o preço */
+            }
+
+            .product-price::after {
+                content: "";
+                position: absolute;
+                width: 0;
+                height: 2px;
+                bottom: -2px;
+                left: 0;
+                background-color: var(--jiji-pink);
+                transition: width 0.3s ease;
+            }
+
+            .product-card:hover .product-price::after {
+                width: 100%;
+            }
+
+            /* Botão de ação */
+            .btn-order {
+                background-color: var(--jiji-pink);
+                color: white;
+                border-radius: 25px;
+                padding: 0.5rem 1.5rem;
+                font-weight: 600;
+                transition: all 0.3s ease;
+                border: none;
+                margin-top: 15px; /* Adiciona espaço antes do botão */
+            }
+
+            .btn-order:hover {
+                background-color: var(--jiji-turquoise);
+                transform: translateY(-2px);
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            }
+
+            /* Special Products */
+            .special-products {
+                padding: 5rem 0;
+                background-color: var(--jiji-pink);
+                position: relative;
+                width: 100%;
+                max-width: 100vw;
+                overflow-x: hidden;
+                overflow-y: visible;
+            }
+
+            /* New Product Sections */
+            .brownies-section,
+            .cinnamon-section,
+            .cheesecake-section,
+            .bolos-section {
+                padding: 5rem 0;
+                background-color: var(--jiji-cream);
+                width: 100%;
+                max-width: 100vw;
+                overflow: hidden;
+            }
+
+            .special-products::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 30px;
+                background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h20v20H0V0zm10 10h10v10H10V10zM0 10h10v10H0V10z' fill='%23FFFFFF' fill-opacity='0.2'/%3E%3C/svg%3E");
+                transform: translateY(-100%);
             }
 
             .special-title {
-                font-size: 1.8rem;
-            }
-        }
-        .icon-link {
-            display: block;
-            text-decoration: none;
-            color: inherit;
-            transition: all 0.3s ease;
-            padding: 15px;
-            border-radius: 10px;
-        }
-
-        .icon-link:hover {
-            transform: translateY(-5px);
-            background-color: rgba(255, 240, 219, 0.5);
-            text-decoration: none;
-            color: inherit;
-        }
-/*<!-- Introdução do XGOHORSE -->
-        /* Seletores mais específicos para sobrescrever qualquer outro estilo */
-        .product-card .product-info .product-price {
-            margin-bottom: 25px !important;
-            display: block !important;
-        }
-
-        .product-card .product-info .btn-order {
-            margin-top: 20px !important;
-            display: block !important;
-        }
-
-        /* Seletores alternativos caso os acima não funcionem */
-        div.product-card div.product-info p.product-price {
-            margin-bottom: 25px !important;
-            display: block !important;
-        }
-
-        div.product-card div.product-info a.btn-order,
-        div.product-card div.product-info button.btn-order {
-            margin-top: 20px !important;
-            display: block !important;
-        }
-
-        /* Garantir que elementos importantes sejam sempre visíveis */
-        .visible-always {
-            opacity: 1 !important;
-            transform: translateY(0) !important;
-        }
-
-        .visible-always {
-            opacity: 1 !important;
-            transform: translateY(0) !important;
-        }
-
-        /* Melhorar a responsividade em dispositivos móveis */
-        @media (max-width: 768px) {
-            .products {
-                padding: 2rem 0;
+                color: white;
+                font-size: 2.5rem;
+                margin-bottom: 2.5rem;
+                text-align: center;
+                position: relative;
+                display: inline-block;
+                left: 50%;
+                transform: translateX(-50%);
             }
 
-            /* Garantir que os cards de produtos sejam visíveis */
-            .product-card {
-                display: block !important;
-                visibility: visible !important;
-                opacity: 1 !important;
+            .special-title::after {
+                content: "";
+                position: absolute;
+                width: 80px;
+                height: 3px;
+                background-color: white;
+                bottom: -10px;
+                left: 50%;
+                transform: translateX(-50%);
             }
 
-            /* Ajustar tamanho das colunas em dispositivos móveis */
-            .col-md-4 {
+            .special-card {
+                background-color: white;
+                border-radius: 12px;
+                overflow: hidden;
+                padding: 2rem;
+                box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+                position: relative;
+                transition: transform 0.3s ease;
+                height: 100%;
+                max-width: 100%;
+            }
+
+            .special-card:hover {
+                transform: translateY(-10px);
+            }
+
+            .special-image.padded-cake {
+                padding: 10px 20px;
+                background-color: white;
+                margin: 0 auto 25px;
+                display: block;
+                max-width: 90%;
+            }
+
+            .special-image {
                 width: 100%;
+                max-width: 100%;
+                border-radius: 8px;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                margin-bottom: 1.5rem;
+                transition: transform 0.5s ease;
+                object-fit: cover;
+            }
+
+            .special-card:hover .special-image {
+                transform: scale(1.03);
+            }
+
+            /* Removed special-badge */
+
+            /* Category tabs */
+            .category-tabs {
+                display: flex;
+                justify-content: center;
+                margin-bottom: 2rem;
+            }
+
+            .category-tab {
+                padding: 0.5rem 1.5rem;
+                margin: 0 0.5rem;
+                background-color: rgba(255, 255, 255, 0.8);
+                border-radius: 20px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                font-weight: 600;
+            }
+
+            .category-tab.active {
+                background-color: var(--jiji-turquoise);
+                color: white;
+            }
+
+            .category-tab:hover:not(.active) {
+                background-color: var(--jiji-cream);
+            }
+
+            .special-content {
+                display: none;
+                overflow: visible;
+            }
+
+            .special-content.active {
+                display: block;
+                overflow: visible;
+            }
+
+            .special-products .container {
+                overflow: visible;
+            }
+
+            .special-products .row {
+                overflow: visible;
+            }
+
+            /* Contact Section */
+            .contact {
+                padding: 5rem 0;
+                background-color: var(--jiji-black);
+                color: white;
+                position: relative;
+                width: 100%;
+                max-width: 100vw;
+                overflow: hidden;
+            }
+
+            .contact-card {
+                background-color: var(--jiji-cream);
+                padding: 2.5rem;
+                border-radius: 12px;
+                box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+                color: #333;
+                transition: transform 0.3s ease;
+            }
+
+            .contact-card:hover {
+                transform: translateY(-5px);
+            }
+
+            .contact-info {
+                padding: 1.5rem;
+                transition: transform 0.3s ease;
+            }
+
+            .contact-info:hover {
+                transform: translateX(5px);
+            }
+
+            .contact-icon {
+                color: var(--jiji-turquoise);
+                font-size: 1.5rem;
+                margin-right: 1rem;
+                transition: transform 0.3s ease;
+            }
+
+            .contact-info:hover .contact-icon {
+                transform: scale(1.2);
+            }
+
+            .direct-contact-btn {
+                background-color: var(--jiji-turquoise);
+                color: white;
+                border-radius: 25px;
+                padding: 0.75rem 2rem;
+                font-weight: 600;
+                transition: all 0.3s ease;
+                border: none;
+                margin: 0.5rem 0;
+                display: inline-block;
+                text-decoration: none;
+            }
+
+            .direct-contact-btn:hover {
+                background-color: var(--jiji-pink);
+                transform: translateY(-3px);
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                color: white;
+            }
+
+            /* Footer */
+            .footer {
+                background-color: var(--jiji-light);
+                padding: 4rem 0 1.5rem;
+                color: #555;
+                text-align: center;
+                position: relative;
+                width: 100%;
+                max-width: 100vw;
+                overflow: hidden;
+            }
+
+            .footer::before {
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 10'%3E%3Crect width='10' height='10' fill='%23002395'/%3E%3Crect x='10' width='10' height='10' fill='%23FFFFFF'/%3E%3Crect x='20' width='10' height='10' fill='%23ED2939'/%3E%3C/svg%3E");
+                background-size: 30px 10px;
+            }
+
+            .footer-logo {
+                max-width: 150px;
+                margin-bottom: 1.5rem;
+                transition: transform 0.5s ease;
+            }
+
+            .footer-logo:hover {
+                transform: scale(1.1) rotate(5deg);
+            }
+
+            .cake-showcase {
+                display: none;
+            }
+
+            .cake-showcase img.main-cake {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+                transform: scale(0.95);
+                transition: transform 0.5s ease;
+            }
+
+            .cake-showcase::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: radial-gradient(
+                    circle,
+                    rgba(255, 255, 255, 0) 60%,
+                    var(--jiji-cream) 100%
+                );
+                z-index: 1;
+            }
+
+            .main-cake {
+                max-width: 100%;
+                display: block;
+                transform: scale(0.95);
+                transition: transform 0.5s ease;
+            }
+
+            .cake-showcase:hover .main-cake {
+                transform: scale(1);
+            }
+
+            /* Social media icons */
+            .social-icons {
                 margin-bottom: 1.5rem;
             }
 
-            /* Fazer botões de encomendar mais visíveis */
-            .btn-order {
-                display: block !important;
-                width: 100%;
-                margin-top: 15px !important;
+            .social-icons a {
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                background-color: var(--jiji-turquoise);
+                color: white;
+                margin: 0 0.5rem;
+                font-size: 1.2rem;
+                transition: all 0.3s ease;
             }
-        }
 
-        /* Modificação para o observer de animações */
-        .fade-in.show,
-        .fade-in.visible-mobile {
-            opacity: 1 !important;
-            transform: translateY(0) !important;
-        }
-    </style>
-</head>
-<body>
-<!-- Navegação -->
-<nav class="navbar navbar-expand-lg">
-    <div class="container">
-        <a class="navbar-brand" href="#">
-            <img src="fotosJijiPatisserie/jiji.png" alt="Confeitaria Jiji" height="40">
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link active" href="#home">Início</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#special">Especiais</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#products">Produtos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#about">Nossa História</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#contact">Contato</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
+            .social-icons a:hover {
+                background-color: var(--jiji-pink);
+                transform: translateY(-3px);
+            }
 
-<!-- Header Section -->
-<section class="header" id="home">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-md-6 mb-4 mb-md-0 text-center text-md-start">
-                <div class="logo-container">
-                    <img src="fotosJijiPatisserie/jiji.png" alt="Confeitaria Jiji" class="logo">
+            /* Botão de voltar ao topo */
+            .back-to-top {
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                width: 40px;
+                height: 40px;
+                background-color: var(--jiji-pink);
+                color: white;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 1.2rem;
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+                z-index: 1000;
+                border: none;
+            }
+
+            .back-to-top.show {
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .back-to-top:hover {
+                background-color: var(--jiji-turquoise);
+                transform: translateY(-3px);
+            }
+
+            /* Animações ao scroll */
+            .fade-in {
+                opacity: 0;
+                transform: translateY(20px);
+                transition:
+                    opacity 0.6s ease,
+                    transform 0.6s ease;
+            }
+
+            .fade-in.show {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            /* Responsividade aprimorada */
+            @media (max-width: 992px) {
+                .header {
+                    padding: 2rem 0;
+                }
+
+                body,
+                html {
+                    overflow-x: hidden !important;
+                }
+
+                .container {
+                    padding-left: 15px;
+                    padding-right: 15px;
+                }
+            }
+
+            @media (max-width: 768px) {
+                h1.display-4 {
+                    font-size: 2.5rem;
+                }
+
+                .header {
+                    padding: 2rem 0;
+                }
+
+                .cat-icon {
+                    width: 70px;
+                    height: 70px;
+                }
+
+                .special-title {
+                    font-size: 2rem;
+                }
+
+                .special-card {
+                    padding: 1.5rem;
+                }
+
+                .category-tabs {
+                    flex-wrap: wrap;
+                }
+
+                .category-tab {
+                    margin-bottom: 0.5rem;
+                }
+
+                body,
+                html,
+                section,
+                .container,
+                .row {
+                    overflow-x: hidden !important;
+                    max-width: 100vw !important;
+                }
+
+                img {
+                    max-width: 100%;
+                    height: auto;
+                }
+            }
+
+            @media (max-width: 576px) {
+                h1.display-4 {
+                    font-size: 2rem;
+                }
+
+                .header img.logo {
+                    max-width: 200px;
+                }
+
+                .special-title {
+                    font-size: 1.8rem;
+                }
+
+                body,
+                html {
+                    width: 100vw !important;
+                    max-width: 100vw !important;
+                    overflow-x: hidden !important;
+                    overflow-y: auto !important;
+                    position: relative !important;
+                    -webkit-overflow-scrolling: touch !important;
+                }
+
+                .container {
+                    padding-left: 10px !important;
+                    padding-right: 10px !important;
+                    max-width: 100vw !important;
+                    touch-action: pan-y !important;
+                }
+
+                .row {
+                    margin: 0 !important;
+                    max-width: 100vw !important;
+                    touch-action: pan-y !important;
+                }
+
+                /* Forçar todos os elementos a não terem scroll horizontal */
+                section,
+                div,
+                article,
+                main,
+                header,
+                footer {
+                    overflow-x: hidden !important;
+                    max-width: 100vw !important;
+                    touch-action: pan-y !important;
+                }
+
+                .special-products .container,
+                .products .container,
+                .contact .container,
+                .about .container,
+                .brownies-section .container,
+                .cinnamon-section .container,
+                .cheesecake-section .container,
+                .bolos-section .container {
+                    overflow: visible !important;
+                    touch-action: pan-y !important;
+                }
+
+                /* Header específico para mobile */
+                .header {
+                    touch-action: pan-y !important;
+                    overflow-y: visible !important;
+                }
+
+                .header-carousel {
+                    pointer-events: none !important;
+                    touch-action: none !important;
+                }
+
+                /* Garantir que cards não bloqueiem scroll */
+                .product-card,
+                .special-card {
+                    touch-action: pan-y !important;
+                }
+            }
+            .icon-link {
+                display: block;
+                text-decoration: none;
+                color: inherit;
+                transition: all 0.3s ease;
+                padding: 15px;
+                border-radius: 10px;
+            }
+
+            .icon-link:hover {
+                transform: translateY(-5px);
+                background-color: rgba(255, 240, 219, 0.5);
+                text-decoration: none;
+                color: inherit;
+            }
+            /*<!-- Introdução do XGOHORSE -->
+        /* Seletores mais específicos para sobrescrever qualquer outro estilo */
+            .product-card .product-info .product-price {
+                margin-bottom: 25px !important;
+                display: block !important;
+            }
+
+            .product-card .product-info .btn-order {
+                margin-top: 20px !important;
+                display: block !important;
+            }
+
+            /* Seletores alternativos caso os acima não funcionem */
+            div.product-card div.product-info p.product-price {
+                margin-bottom: 25px !important;
+                display: block !important;
+            }
+
+            div.product-card div.product-info a.btn-order,
+            div.product-card div.product-info button.btn-order {
+                margin-top: 20px !important;
+                display: block !important;
+            }
+
+            /* Garantir que elementos importantes sejam sempre visíveis */
+            .visible-always {
+                opacity: 1 !important;
+                transform: translateY(0) !important;
+            }
+
+            .visible-always {
+                opacity: 1 !important;
+                transform: translateY(0) !important;
+            }
+
+            /* Melhorar a responsividade em dispositivos móveis */
+            @media (max-width: 768px) {
+                .products {
+                    padding: 2rem 0;
+                }
+
+                /* Garantir que os cards de produtos sejam visíveis */
+                .product-card {
+                    display: block !important;
+                    visibility: visible !important;
+                    opacity: 1 !important;
+                }
+
+                /* Ajustar tamanho das colunas em dispositivos móveis */
+                .col-md-4 {
+                    width: 100%;
+                    margin-bottom: 1.5rem;
+                }
+
+                /* Fazer botões de encomendar mais visíveis */
+                .btn-order {
+                    display: block !important;
+                    width: 100%;
+                    margin-top: 15px !important;
+                }
+            }
+
+            /* Modificação para o observer de animações */
+            .fade-in.show,
+            .fade-in.visible-mobile {
+                opacity: 1 !important;
+                transform: translateY(0) !important;
+            }
+
+            /* Transições suaves entre seções */
+            .header,
+            .products,
+            .special-products,
+            .about,
+            .contact {
+                transition: all 0.6s ease-in-out;
+            }
+
+            /* Efeito de scroll suave para toda a página */
+            html {
+                scroll-behavior: smooth;
+            }
+
+            /* Fade in suave ao rolar */
+            section {
+                opacity: 0;
+                transform: translateY(30px);
+                animation: fadeInUp 0.8s ease-out forwards;
+            }
+
+            @keyframes fadeInUp {
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            /* Seções já visíveis não precisam da animação */
+            .visible-always,
+            section:first-of-type {
+                opacity: 1 !important;
+                transform: translateY(0) !important;
+                animation: none !important;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Navegação -->
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img
+                        src="fotosJijiPatisserie/jiji.png"
+                        alt="Confeitaria Jiji"
+                        height="40"
+                    />
+                </a>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#home">Início</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#special">Especiais</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#products">Produtos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">Nossa História</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">Contato</a>
+                        </li>
+                    </ul>
                 </div>
-                <h1 class="display-4 fw-bold mb-3 fade-in">Jiji Patisserie</h1>
-                <h2 class="h3 mb-4 fade-in">Bolos artesanais que encantam todos os sentidos</h2>
-                <p class="lead mb-4 fade-in">Cada criação é feita com ingredientes selecionados e muito carinho, trazendo sabor e arte para seus momentos especiais.</p>
-                <a href="#contact" class="btn btn-order fade-in">Faça sua encomenda</a>
             </div>
-        </div>
-    </div>
-</section>
+        </nav>
 
-
-
-
-<!-- Special Products -->
-<section class="special-products fade-in" id="special">
-    <div class="container">
-        <h2 class="special-title">Criações Especiais</h2>
-
-        <!-- Tabs de categorias -->
-        <div class="category-tabs mb-5">
-            <div class="category-tab active" data-category="aniversario">Aniversário</div>
-            <div class="category-tab" data-category="tematicos">Temáticos</div>
-            <div class="category-tab" data-category="datas">Datas Especiais</div>
-        </div>
-
-        <!-- Conteúdo de Aniversário -->
-        <div class="special-content active" id="aniversario-content">
-            <div class="row">
-                <div class="col-lg-6 mb-4">
-                    <div class="special-card h-100">
-                        <img src="fotosJijiPatisserie/stitch-cake.png" alt="Bolo de Festa" class="special-image">
-                        <h3>Bolo de Aniversário Personalizado</h3>
-                        <p>Celebre seu dia especial com um bolo único, criado especialmente para você. Nossas decorações personalizadas transformam qualquer celebração em um momento inesquecível.</p>
-                        <p>Consulte sabores disponíveis e reserve com antecedência.</p>
-                        <p class="product-price">A partir de R$ 139,90</p>
-                        <a href="https://wa.me/5538998983075?text=Olá,%20gostaria%20de%20consultar%20opções%20para%20Bolo%20de%20Aniversário%20Personalizado" class="btn btn-order">Consultar opções</a>
-                    </div>
-                </div>
-                <div class="col-lg-6 mb-4">
-                    <div class="special-card h-100">
-                        <img src="fotosJijiPatisserie/happy-birthday-cake.png" alt="Bolo Happy Birthday" class="special-image ">
-                        <h3>Bolo Clássico Happy Birthday</h3>
-                        <p>Um bolo elegante com decoração clássica e requintada. Design delicado em preto e branco com detalhes de corações, ideal para qualquer idade ou ocasião.</p>
-                        <p>Disponível em vários sabores e tamanhos.</p>
-                        <p class="product-price">A partir de R$ 169,90</p>
-                        <a href="https://wa.me/5538998983075?text=Olá,%20gostaria%20de%20encomendar%20um%20Bolo%20Clássico%20Happy%20Birthday" class="btn btn-order">Encomendar</a>
+        <!-- Header Section -->
+        <section class="header" id="home">
+            <!-- Carrossel de fundo -->
+            <div class="header-carousel">
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <div
+                            class="swiper-slide"
+                            style="
+                                background-image: url(&quot;fotosJijiPatisserie/Fundo de Aniversário.webp&quot;);
+                            "
+                        ></div>
+                        <div
+                            class="swiper-slide"
+                            style="
+                                background-image: url(&quot;fotosJijiPatisserie/vecteezy_beautiful-butter-cake-with-colorful-pink-flower-decoration_9297816.jpg&quot;);
+                            "
+                        ></div>
+                        <div
+                            class="swiper-slide"
+                            style="
+                                background-image: url(&quot;fotosJijiPatisserie/vecteezy_tiered-berry-cake_1978829.jpg&quot;);
+                            "
+                        ></div>
                     </div>
                 </div>
             </div>
-            <div class="row mt-4">
-                <div class="col-lg-6 mb-4">
-                    <div class="special-card h-100">
-                        <img src="fotosJijiPatisserie/love-cake.png" alt="Bolo de Corações" class="special-image">
-                        <h3>Love Celebration Cake</h3>
-                        <p>Para celebrações românticas ou para demonstrar amor. Este bolo com decoração de laços e corações vermelhos é uma declaração de carinho.</p>
-                        <p>Disponível nos sabores: chocolate, morango ou red velvet.</p>
-                        <p class="product-price">A partir de R$ 169,90</p>
-                        <a href="https://wa.me/5538998983075?text=Olá,%20gostaria%20de%20encomendar%20um%20Love%20Celebration%20Cake" class="btn btn-order">Encomendar</a>
-                    </div>
-                </div>
-                <div class="col-lg-6 mb-4">
-                    <div class="special-card h-100">
-                        <img src="fotosJijiPatisserie/strawberry-cake.png" alt="Bolo com Morangos" class="special-image">
-                        <h3>Bolo Naked com Frutas</h3>
-                        <p>Para os amantes de frutas frescas, este bolo semi-naked decorado com morangos e docinhos.</p>
-                        <p>Perfeito para celebrações diurnas ou festas ao ar livre.</p>
-                        <p class="product-price">A partir de R$ 59,90</p>
-                        <a href="https://wa.me/5538998983075?text=Olá,%20gostaria%20de%20encomendar%20um%20Bolo%20Naked%20com%20Frutas" class="btn btn-order">Encomendar</a>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <!-- Conteúdo Temáticos -->
-        <div class="special-content" id="tematicos-content">
-            <div class="row">
-                <div class="col-lg-6 mb-4">
-                    <div class="special-card h-100">
-                        <img src="fotosJijiPatisserie/PixelartRave Party.webp" alt="Bolo Temático" class="special-image">
-                        <h3>Bolos para Eventos Temáticos</h3>
-                        <p>Para festas temáticas e eventos especiais, oferecemos criações exclusivas que combinam decorações únicas com sabores inesquecíveis.</p>
-                        <p>Consulte opções personalizadas para seu evento.</p>
-                        <p class="product-price">A partir de R$ 239,90</p>
-                        <a href="https://wa.me/5538998983075?text=Olá,%20gostaria%20de%20solicitar%20um%20orçamento%20para%20Bolo%20Temático" class="btn btn-order">Solicitar orçamento</a>
-                    </div>
-                </div>
-                <div class="col-lg-6 mb-4">
-                    <div class="special-card h-100">
-                        <img src="fotosJijiPatisserie/stitch-cake.png" alt="Bolo Infantil" class="special-image">
-                        <h3>Bolos Infantis</h3>
-                        <p>Bolos mágicos que encantam as crianças e os adultos, com decorações coloridas, personagens favoritos e muito sabor e diversão.</p>
-                        <p>Disponível em diversos temas e tamanhos.</p>
-                        <p class="product-price">A partir de R$ 189,90</p>
-                        <a href="https://wa.me/5538998983075?text=Olá,%20gostaria%20de%20encomendar%20um%20Bolo%20Infantil" class="btn btn-order">Encomendar</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Conteúdo Datas Especiais -->
-        <div class="special-content" id="datas-content">
-            <div class="row">
-                <div class="col-lg-6 mb-4">
-                    <div class="special-card h-100">
-                        <img src="fotosJijiPatisserie/pascal-cake.png" alt="Bolo de Páscoa" class="special-image">
-                        <h3>Bolos de Páscoa</h3>
-                        <p>Celebre a Páscoa com nossos bolos especiais decorados com motivos pascoais, chocolate premium
-                            e muito sabor.</p>
-                        <p>Disponível por tempo limitado. Encomende com antecedência.</p>
-                        <p class="product-price">A partir de R$ 159,90</p>
-                        <a href="https://wa.me/5538998983075?text=Olá,%20gostaria%20de%20encomendar%20um%20Bolo%20de%20Páscoa" class="btn btn-order">Encomendar</a>
-                    </div>
-                </div>
-                <div class="col-lg-6 mb-4">
-                    <div class="special-card h-100">
-                        <img src="fotosJijiPatisserie/christmas-cake.png" alt="Bolo de Natal" class="special-image">
-                        <h3>Bolos de Natal</h3>
-                        <p>Tradicionais e deliciosos bolos natalinos com frutas cristalizadas, nozes e especiarias, deco
-                            rados com temas festivos.</p>
-                            <p>Reservas disponíveis a partir de novembro.</p>
-                            <p class="product-price">A partir de R$ 169,90</p>
-                            <a href="https://wa.me/5538998983075?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20os%20Bolos%20de%20Natal" class="btn btn-order">Reservar</a>
+            <div class="container">
+                <div class="row align-items-center">
+                    <div
+                        class="col-md-6 mb-4 mb-md-0 text-center text-md-start"
+                    >
+                        <div class="logo-container">
+                            <img
+                                src="fotosJijiPatisserie/jiji.png"
+                                alt="Confeitaria Jiji"
+                                class="logo"
+                            />
                         </div>
+                        <h1 class="display-4 fw-bold mb-3 fade-in">
+                            Jiji Patisserie
+                        </h1>
+                        <h2 class="h3 mb-4 fade-in">
+                            Bolos artesanais que encantam todos os sentidos
+                        </h2>
+                        <p class="lead mb-4 fade-in">
+                            Cada criação é feita com ingredientes selecionados e
+                            muito carinho, trazendo sabor e arte para seus
+                            momentos especiais.
+                        </p>
+                        <a href="#contact" class="btn btn-order fade-in"
+                            >Faça sua encomenda</a
+                        >
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="row justify-content-center mt-3 mb-5">
-            <div class="col-12 text-center">
-                <div class="special-card p-4">
-                    <h4>Informações de Encomendas</h4>
-                    <p>Faça sua encomenda com antecedência para garantir disponibilidade.</p>
-                    <div class="d-flex justify-content-center">
-                        <a href="https://wa.me/5538998983075?text=Olá,%20gostaria%20de%20fazer%20uma%20encomenda%20para%20Páscoa" class="direct-contact-btn" style="background-color: #00E676; display: inline-flex; align-items: center; padding: 10px 20px; font-weight: 600; text-decoration: none; color: white; border-radius: 30px; transition: all 0.3s ease; box-shadow: 0 4px 8px rgba(0,0,0,0.1); margin: 10px;">
-                            <i class="bi bi-whatsapp" style="font-size: 1.2rem; margin-right: 10px;"></i> Encomendas via WhatsApp: (38) 99898-3075
+        </section>
+
+        <!-- Products Section -->
+        <section class="products visible-always" id="products">
+            <div class="container">
+                <h2 class="h1 text-center mb-5">Nossos Produtos</h2>
+
+                <!-- Primeira linha: 3 itens centralizados -->
+                <div class="row text-center justify-content-center mb-5">
+                    <!-- Bolos -->
+                    <div class="col-md-4 mb-4 mb-md-0">
+                        <a href="#bolos-produtos" class="icon-link">
+                            <div class="cat-icon cake"></div>
+                            <h3>Bolos</h3>
+                            <p>
+                                Deliciosos bolos para todas as ocasiões, com
+                                recheios incríveis e decorações personalizadas.
+                            </p>
                         </a>
                     </div>
-                    <p class="mt-3 mb-0"><small>Instagram - @jiji_confeitaria</small></p>
+
+                    <!-- Cheesecake -->
+                    <div class="col-md-4 mb-4 mb-md-0">
+                        <a href="#cheesecake-section" class="icon-link">
+                            <div class="cat-icon cookie"></div>
+                            <h3>Cheesecake</h3>
+                            <p>
+                                Criações exclusivas para surpreender o paladar e
+                                adoçar o seu dia.
+                            </p>
+                        </a>
+                    </div>
                 </div>
-            </div>
-        </div>
-</section>
 
-<!-- Products Section -->
-<section class="products visible-always" id="products">
-    <div class="container">
-        <h2 class="h1 text-center mb-5">Nossos Produtos</h2>
+                <!-- Segunda linha: 2 itens centralizados -->
+                <div class="row text-center justify-content-center mb-5">
+                    <!-- Brownies -->
+                    <div class="col-md-4 mb-4 mb-md-0">
+                        <a href="#brownies-section" class="icon-link">
+                            <div class="cat-icon brownie"></div>
+                            <h3>Brownies</h3>
+                            <p>
+                                Irresistíveis brownies com textura perfeita e
+                                sabor intenso de chocolate.
+                            </p>
+                        </a>
+                    </div>
 
-        <!-- Primeira linha: 3 itens centralizados -->
-        <div class="row text-center justify-content-center mb-5">
-            
-
-            <!-- Bolos -->
-            <div class="col-md-4 mb-4 mb-md-0">
-                <a href="#bolos-produtos" class="icon-link">
-                    <div class="cat-icon cake"></div>
-                    <h3>Bolos</h3>
-                    <p>Deliciosos bolos para todas as ocasiões, com recheios incríveis e decorações personalizadas.</p>
-                </a>
-            </div>
-
-            <!-- Cheesecake -->
-            <div class="col-md-4 mb-4 mb-md-0">
-                <a href="#cheesecake-section" class="icon-link">
-                    <div class="cat-icon cookie"></div>
-                    <h3>Cheesecake</h3>
-                    <p>Criações exclusivas para surpreender o paladar e adoçar o seu dia.</p>
-                </a>
-            </div>
-        </div>
-
-        <!-- Segunda linha: 2 itens centralizados -->
-        <div class="row text-center justify-content-center mb-5">
-            <!-- Brownies -->
-            <div class="col-md-4 mb-4 mb-md-0">
-                <a href="#brownies-section" class="icon-link">
-                    <div class="cat-icon brownie"></div>
-                    <h3>Brownies</h3>
-                    <p>Irresistíveis brownies com textura perfeita e sabor intenso de chocolate.</p>
-                </a>
-            </div>
-
-            <!-- Cinnamoon Roll -->
-            <div class="col-md-4">
-                <a href="#cinnamoon-section" class="icon-link">
-                    <div class="cat-icon cinnamoon"></div>
-                    <h3>Cinnamoon Roll</h3>
-                    <p>Seguindo a receita tradicional com o irresistível gosto de canela.</p>
-                </a>
-            </div>
-        </div>
-        
-    
-        <!-- Informações Adicionais de Páscoa -->
-
-        <div id="bolos-produtos" class="row justify-content-center mt-5">
-            <div class="col-12 text-center mb-4">
-                <h3>Bolos tradicionais</h3>
-                <p class="text-muted">Bolos feitos com pão de ló ou massa tradicional para qualquer momento do dia</p>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="product-card h-100">
-                    <img src="fotosJijiPatisserie/bololimao.jpg" alt="Bolo de Limão" class="product-image">
-                    <div class="product-info">
-                        <span class="product-tag">Bolo</span>
-                        <h4>Bolo de Limão</h4>
-                        <p class="text-muted">Suave pão de ló com recheio cremoso e cobertura de limão-taiti.</p>
-                        <p class="product-price">R$ 27,90</p>
-                        <a href="https://wa.me/5538998983075?text=Olá,%20gostaria%20de%20encomendar%20um%20Cheesecake%20de%20Limão" class="btn btn-order">Encomendar</a>
+                    <!-- Cinnamoon Roll -->
+                    <div class="col-md-4">
+                        <a href="#cinnamoon-section" class="icon-link">
+                            <div class="cat-icon cinnamoon"></div>
+                            <h3>Cinnamon Roll</h3>
+                            <p>
+                                Seguindo a receita tradicional com o
+                                irresistível gosto de canela.
+                            </p>
+                        </a>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 mb-4">
-                <div class="product-card h-100">
-                    <img src="fotosJijiPatisserie/bolodechocolate.jpg" alt="Bolo de Cenoura com Chocolate" class="product-image">
-                    <div class="product-info">
-                        <span class="product-tag">Bolo</span>
-                        <h4>Bolo de Cenoura com Chocolate</h4>
-                        <p class="text-muted">Massa úmida de cenoura com recheio de cacau 100%.</p>
-                        <p class="product-price">R$ 27,90</p>
-                        <a href="https://wa.me/5538998983075?text=Olá,%20gostaria%20de%20encomendar%20um%20Bolo%20de%20Cenoura%20com%20Chocolate" class="btn btn-order">Encomendar</a>
+        </section>
+
+        <!-- Special Products -->
+        <section class="special-products fade-in" id="special">
+            <div class="container">
+                <h2 class="special-title">Criações Especiais</h2>
+
+                <!-- Tabs de categorias -->
+                <div class="category-tabs mb-5">
+                    <div class="category-tab active" data-category="vintage">
+                        Vintage
                     </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="product-card h-100">
-                    <img src="fotosJijiPatisserie/bolodefuba.jpg" alt="Bolo de Limão" class="product-image">
-                    <div class="product-info">
-                        <span class="product-tag">Bolo</span>
-                        <h4>Bolo de Fubá</h4>
-                        <p class="text-muted">Massa macia e umida, com textura única e aroma que remete a culinária mineira.</p>
-                        <p class="product-price">R$ 24,90</p>
-                        <a href="https://wa.me/5538998983075?text=Olá,%20gostaria%20de%20encomendar%20um%20Cheesecake%20de%20Limão" class="btn btn-order">Encomendar</a>
+                    <div class="category-tab" data-category="tematico">
+                        Temático
                     </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Brownies Row -->
-        <div class="row justify-content-center mt-5">
-            <div class="col-12 text-center mb-4" id="brownies-section">
-                <h3>Cookies & Brownies</h3>
-                <p class="text-muted">Nossas delícias para qualquer momento do dia</p>
-            </div>
-
-            <div class="col-md-4 mb-4">
-                <div class="product-card h-100">
-                    <img src="fotosJijiPatisserie/brownieTradicional.jpg" alt="Brownies Tradicionais" class="product-image">
-                    <div class="product-info">
-                        <span class="product-tag">Brownie</span>
-                        <h4>Brownies Tradicionais</h4>
-                        <p class="text-muted">Nosso clássico brownie com chocolate belga, crocante por fora e macio por dentro.</p>
-                        <p class="product-price">R$ 39,90 (caixa com 6)</p>
-                        <a href="https://wa.me/5538998983075?text=Olá,%20gostaria%20de%20encomendar%20uma%20caixa%20de%20Brownies%20Tradicionais" class="btn btn-order">Encomendar</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4 mb-4">
-                <div class="product-card h-100">
-                    <img src="fotosJijiPatisserie/brownieReal.png" alt="Brownies Decorados" class="product-image">
-                    <div class="product-info">
-                        <span class="product-tag">Brownie</span>
-                        <h4>Brownies Decorados</h4>
-                        <p class="text-muted">Brownies com cobertura artística e toppings especiais para ocasiões especiais.</p>
-                        <p class="product-price">R$ 49,90 (caixa com 6)</p>
-                        <a href="https://wa.me/5538998983075?text=Olá,%20gostaria%20de%20encomendar%20uma%20caixa%20de%20Brownies%20Decorados" class="btn btn-order">Encomendar</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Linha dos produtos com títulos alinhados -->
-        <div class="row justify-content-center mt-5">
-            <!-- Coluna Cinnamoon -->
-            <div class="col-md-4 mb-4">
-                <!-- Título Cinnamoon alinhado com seu card -->
-                <div class="text-center mb-4" id="cinnamoon-section">
-                    <h3>Cinnamoon Rolls</h3>
-                    <p class="text-muted">Momentos perfeitos com gostinho de canela</p>
+                    <div class="category-tab" data-category="zero">Zero</div>
                 </div>
 
-                <!-- Card do Cinnamoon -->
-                <div class="product-card">
-                    <img src="fotosJijiPatisserie/realCinnamoon.png" alt="Cinnamoon Roll Tradicional" class="product-image">
-                    <div class="product-info">
-                        <span class="product-tag">Cinnamoon</span>
-                        <h4>Cinnamoon Roll</h4>
-                        <p class="text-muted">Nosso delicioso cinnamoon roll com massa macia e recheio generoso de canela.</p>
-                        <p class="product-price">R$ 19,90 (unidade)</p>
-                        <a href="https://wa.me/5538998983075?text=Olá,%20gostaria%20de%20encomendar%20Cinnamoon%20Roll%20Tradicional" class="btn btn-order">Encomendar</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Espaço entre os produtos -->
-            <div class="col-md-1"></div>
-
-            <!-- Coluna Cheesecake -->
-            <div class="col-md-4 mb-4">
-                <!-- Título Cheesecake alinhado com seu card -->
-                <div class="text-center mb-4" id="cheesecake-section">
-                    <h3>Cheesecakes</h3>
-                    <p class="text-muted">Cheesecakes cremosos feitos com ingredientes selecionados</p>
-                </div>
-
-                <!-- Card do Cheesecake -->
-                <div class="product-card">
-                    <img src="fotosJijiPatisserie/realCheesecake.png" alt="Cheesecake Tradicional" class="product-image">
-                    <div class="product-info">
-                        <span class="product-tag">Cheesecake</span>
-                        <h4>Cheesecake Tradicional</h4>
-                        <p class="text-muted">Delicioso cheesecake com base crocante de biscoito e cobertura de frutas vermelhas.</p>
-                        <p class="product-price">R$ 59,90</p>
-                        <a href="https://wa.me/5538998983075?text=Olá,%20gostaria%20de%20encomendar%20um%20Cheesecake%20Tradicional" class="btn btn-order">Encomendar</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- About Section -->
-<section class="about fade-in" id="about">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-8">
-                <div class="about-card">
-                    <h2 class="h1 mb-4 text-center">Nossa História</h2>
-                    <p>A JijiPatisserie nasceu do encontro entre paixão e tradição. Fundada por uma confeiteira que sempre sonhou em transformar ingredientes em pequenas obras de arte, nossa patisserie carrega o nome de Jiji, a gata preta que, com seu olhar atento e exigente, tornou-se a guardiã e símbolo de nossa qualidade.</p>
-                    <p>Em nossa cozinha, cada criação é pensada com cuidado meticuloso. Utilizamos apenas ingredientes selecionados, como o cacau 100%, mel regional e frutas frescas da estação. Nossa especialidade está nos doces artesanais que combinam técnicas tradicionais com toques contemporâneos, resultando em experiências sensoriais únicas.</p>
-                    <p>O que começou como um pequeno ateliê de doces ganhou reconhecimento pelo compromisso com o sabor autêntico e apresentação impecável. Da massa perfeitamente aerada dos nossos pães de ló até a textura sedosa das nossas coberturas, cada detalhe é supervisionado com o mesmo cuidado que Jiji dedica ao escolher seu lugar favorito para descansar.</p>
-                    <p>Acreditamos que a confeitaria vai além da simples indulgência – é uma forma de conexão, celebração e memória afetiva. Seja em um brownie de chocolate intenso, um bolo de limão refrescante ou nas nossas criações sazonais como os ovos de Páscoa artesanais, buscamos proporcionar momentos de prazer genuíno.</p>
-                    <p>Convidamos você a conhecer nosso universo de sabores, onde cada mordida conta uma história e cada doce leva o selo de aprovação da nossa mais exigente crítica: Jiji, nossa chef de patinhas, sempre atenta para garantir que apenas o extraordinário chegue até você.
-                        "Doces com o toque de Jiji: para quem busca o extraordinário."</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Contact Section -->
-<section class="contact fade-in" id="contact">
-    <div class="container">
-        <div class="row justify-content-center mb-5">
-            <div class="col-lg-8 text-center">
-                <h2 class="display-4 mb-3 text-white">Entre em Contato</h2>
-                <p class="lead text-white mb-0">Estamos ansiosos para adoçar seu dia com nossas criações.</p>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-lg-8 mx-auto">
-                <div class="contact-card">
-                    <div class="row">
-                        <div class="col-md-6 mb-4 mb-md-0">
-                            <div class="d-flex align-items-center mb-3 contact-info">
-                                <span class="contact-icon">📱</span>
-                                <div>
-                                    <h5 class="mb-0">WhatsApp</h5>
-                                    <p class="mb-0">(38) 99898-3075</p>
-                                </div>
-                            </div>
-
-                            <div class="d-flex align-items-center mb-3 contact-info">
-                                <span class="contact-icon">📧</span>
-                                <div>
-                                    <h5 class="mb-0">Email</h5>
-                                    <p class="mb-0">jijimaiabrasil@gmail.com</p>
-                                </div>
-                            </div>
-
-                            <div class="d-flex align-items-center mb-3 contact-info">
-                                <span class="contact-icon">📍</span>
-                                <div>
-                                    <h5 class="mb-0">Endereço</h5>
-                                    <p class="mb-0">Rua Seis, 155 - Morada do Sol<br>Montes Claros - MG</p>
-                                </div>
-                            </div>
-
-                            <div class="d-flex align-items-center mb-3 contact-info">
-                                <span class="contact-icon">⏰</span>
-                                <div>
-                                    <h5 class="mb-0">Horário de Atendimento</h5>
-                                    <p class="mb-0">Segunda a Sábado: 9h às 18h</p>
-                                </div>
-                            </div>
-
-                            <div class="mt-4">
-                                <h5>Fale Conosco Diretamente</h5>
-                                <a href="https://wa.me/5538998983075" class="direct-contact-btn" style="background-color: #00E676; display: inline-flex; align-items: center; padding: 10px 20px; font-weight: 600; text-decoration: none; color: white; border-radius: 30px; transition: all 0.3s ease; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
-                                    <i class="bi bi-whatsapp" style="font-size: 1.2rem; margin-right: 10px;"></i> Conversar no WhatsApp
-                                </a>
+                <!-- Conteúdo Vintage -->
+                <div class="special-content active" id="vintage-content">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-6 mb-4">
+                            <div class="special-card h-100">
+                                <img
+                                    src="fotosJijiPatisserie/happy-birthday-cake.png"
+                                    alt="Bolo Happy Birthday"
+                                    class="special-image"
+                                />
+                                <h3>Bolo Clássico Happy Birthday</h3>
+                                <p>
+                                    Um bolo elegante com decoração clássica e
+                                    requintada. Design delicado em preto e
+                                    branco com detalhes de corações, ideal para
+                                    qualquer idade ou ocasião.
+                                </p>
+                                <p>Disponível em vários sabores e tamanhos.</p>
+                                <p class="product-price">
+                                    A partir de R$ 169,90
+                                </p>
+                                <a
+                                    href="https://wa.me/5538998983075?text=Olá,%20gostaria%20de%20encomendar%20um%20Bolo%20Clássico%20Happy%20Birthday"
+                                    class="btn btn-order"
+                                    >Encomendar</a
+                                >
                             </div>
                         </div>
-
-                        <div class="col-md-6">
-                            <h5 class="mb-3">Onde Estamos</h5>
-                            <div class="ratio ratio-4x3 mb-3">
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3818.7721783356647!2d-43.87658892394865!3d-16.83169188402245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xab53a0643f1edf%3A0xe2f6fb5822e9a11c!2sR.%20Seis%2C%20155%20-%20Morada%20do%20Sol%2C%20Montes%20Claros%20-%20MG%2C%2039403-113!5e0!3m2!1spt-BR!2sbr!4v1710527521901!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <div class="col-lg-6 mb-4">
+                            <div class="special-card h-100">
+                                <img
+                                    src="fotosJijiPatisserie/love-cake.png"
+                                    alt="Bolo de Corações"
+                                    class="special-image"
+                                />
+                                <h3>Love Celebration Cake</h3>
+                                <p>
+                                    Para celebrações românticas ou para
+                                    demonstrar amor. Este bolo com decoração de
+                                    laços e corações vermelhos é uma declaração
+                                    de carinho.
+                                </p>
+                                <p>
+                                    Disponível nos sabores: chocolate, morango
+                                    ou red velvet.
+                                </p>
+                                <p class="product-price">
+                                    A partir de R$ 169,90
+                                </p>
+                                <a
+                                    href="https://wa.me/5538998983075?text=Olá,%20gostaria%20de%20encomendar%20um%20Love%20Celebration%20Cake"
+                                    class="btn btn-order"
+                                    >Encomendar</a
+                                >
                             </div>
+                        </div>
+                    </div>
+                </div>
 
-                            <h5 class="mb-3">Siga-nos nas Redes Sociais</h5>
-                            <div class="social-icons">
-                                <a href="https://www.instagram.com/jiji_confeitaria?igsh=Nnk5aXZkcXV6eDdi" target="_blank" title="Instagram">
-                                    <i class="bi bi-instagram"></i>
-                                </a>
-                                <a href="https://facebook.com/jijipatisserie" target="_blank" title="Facebook">
-                                    <i class="bi bi-facebook"></i>
-                                </a>
-                                <a href="https://www.tiktok.com/@jijipatisserie" target="_blank" title="TikTok">
-                                    <i class="bi bi-tiktok"></i>
-                                </a>
+                <!-- Conteúdo Temático -->
+                <div class="special-content" id="tematico-content">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-6 mb-4">
+                            <div class="special-card h-100">
+                                <img
+                                    src="fotosJijiPatisserie/stitch-cake.png"
+                                    alt="Bolo de Aniversário Personalizado"
+                                    class="special-image"
+                                />
+                                <h3>Bolo de Aniversário Personalizado</h3>
+                                <p>
+                                    Celebre seu dia especial com um bolo único,
+                                    criado especialmente para você. Nossas
+                                    decorações personalizadas transformam
+                                    qualquer celebração em um momento
+                                    inesquecível.
+                                </p>
+                                <p>
+                                    Consulte sabores disponíveis e reserve com
+                                    antecedência.
+                                </p>
+                                <p class="product-price">
+                                    A partir de R$ 139,90
+                                </p>
+                                <a
+                                    href="https://wa.me/5538998983075?text=Olá,%20gostaria%20de%20consultar%20opções%20para%20Bolo%20de%20Aniversário%20Personalizado"
+                                    class="btn btn-order"
+                                    >Consultar opções</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Conteúdo Zero -->
+                <div class="special-content" id="zero-content">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-6 mb-4">
+                            <div class="special-card h-100">
+                                <img
+                                    src="fotosJijiPatisserie/strawberry-cake.png"
+                                    alt="Bolo Naked com Frutas"
+                                    class="special-image"
+                                />
+                                <h3>Bolo Naked com Frutas</h3>
+                                <p>
+                                    Para os amantes de frutas frescas, este bolo
+                                    semi-naked decorado com morangos e docinhos.
+                                </p>
+                                <p>
+                                    Perfeito para celebrações diurnas ou festas
+                                    ao ar livre.
+                                </p>
+                                <p class="product-price">
+                                    A partir de R$ 59,90
+                                </p>
+                                <a
+                                    href="https://wa.me/5538998983075?text=Olá,%20gostaria%20de%20encomendar%20um%20Bolo%20Naked%20com%20Frutas"
+                                    class="btn btn-order"
+                                    >Encomendar</a
+                                >
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
+            <div class="row justify-content-center mt-3 mb-5">
+                <div class="col-lg-8 col-md-10 col-12 text-center">
+                    <div class="special-card p-4">
+                        <h4>Informações de Encomendas</h4>
+                        <p>
+                            Faça sua encomenda com antecedência para garantir
+                            disponibilidade.
+                        </p>
+                        <div class="d-flex justify-content-center flex-wrap">
+                            <a
+                                href="https://wa.me/5538998983075?text=Olá,%20gostaria%20de%20fazer%20uma%20encomenda"
+                                class="direct-contact-btn"
+                                style="
+                                    background-color: #00e676;
+                                    display: inline-flex;
+                                    align-items: center;
+                                    padding: 10px 20px;
+                                    font-weight: 600;
+                                    text-decoration: none;
+                                    color: white;
+                                    border-radius: 30px;
+                                    transition: all 0.3s ease;
+                                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                                    margin: 10px;
+                                "
+                            >
+                                <i
+                                    class="bi bi-whatsapp"
+                                    style="
+                                        font-size: 1.2rem;
+                                        margin-right: 10px;
+                                    "
+                                ></i>
+                                Encomendas via WhatsApp: (38) 99898-3075
+                            </a>
+                            <a
+                                href="https://www.instagram.com/jiji_confeitaria"
+                                target="_blank"
+                                class="direct-contact-btn"
+                                style="
+                                    background: linear-gradient(
+                                        45deg,
+                                        #f09433 0%,
+                                        #e6683c 25%,
+                                        #dc2743 50%,
+                                        #cc2366 75%,
+                                        #bc1888 100%
+                                    );
+                                    display: inline-flex;
+                                    align-items: center;
+                                    padding: 10px 20px;
+                                    font-weight: 600;
+                                    text-decoration: none;
+                                    color: white;
+                                    border-radius: 30px;
+                                    transition: all 0.3s ease;
+                                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                                    margin: 10px;
+                                "
+                            >
+                                <i
+                                    class="bi bi-instagram"
+                                    style="
+                                        font-size: 1.2rem;
+                                        margin-right: 10px;
+                                    "
+                                ></i>
+                                Instagram: @jiji_confeitaria
+                            </a>
+                        </div>
+                        <p class="mt-3 mb-0" style="display: none">
+                            <small>Instagram - @jiji_confeitaria</small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<!-- Footer -->
-<footer class="footer" style="background-image: url('fotosJijiPatisserie/BakeryStudioGhibli.webp'); background-size: cover; background-position: center; position: relative; color: white; text-shadow: 1px 1px 3px rgba(0,0,0,0.7);">
-    <!-- Overlay para melhorar o contraste -->
-    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.6);"></div>
+        <!-- Cookies & Brownies Section -->
+        <section class="brownies-section" id="brownies-section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 text-center mb-4">
+                        <h3>Cookies & Brownies</h3>
+                        <p class="text-muted">
+                            Nossas delícias para qualquer momento do dia
+                        </p>
+                    </div>
 
-    <div class="container" style="position: relative; z-index: 2;">
-        <img src="fotosJijiPatisserie/jiji.png" alt="Confeitaria Jiji" class="footer-logo">
+                    <div class="col-md-4 mb-4">
+                        <div class="product-card h-100">
+                            <img
+                                src="fotosJijiPatisserie/brownieTradicional.jpg"
+                                alt="Brownies Tradicionais"
+                                class="product-image"
+                            />
+                            <div class="product-info">
+                                <span class="product-tag">Brownie</span>
+                                <h4>Brownies Tradicionais</h4>
+                                <p class="text-muted">
+                                    Nosso clássico brownie com chocolate belga,
+                                    crocante por fora e macio por dentro.
+                                </p>
+                                <p class="product-price">
+                                    R$ 39,90 (caixa com 6)
+                                </p>
+                                <a
+                                    href="https://wa.me/5538998983075?text=Olá,%20gostaria%20de%20encomendar%20uma%20caixa%20de%20Brownies%20Tradicionais"
+                                    class="btn btn-order"
+                                    >Encomendar</a
+                                >
+                            </div>
+                        </div>
+                    </div>
 
-        <div class="social-icons">
-            <a href="https://instagram.com/jijipatisserie" target="_blank"><i class="bi bi-instagram"></i></a>
-            <a href="https://facebook.com/jijipatisserie" target="_blank"><i class="bi bi-facebook"></i></a>
-            <a href="https://wa.me/5538998983075" target="_blank"><i class="bi bi-whatsapp"></i></a>
-        </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="product-card h-100">
+                            <img
+                                src="fotosJijiPatisserie/brownieReal.png"
+                                alt="Brownies Decorados"
+                                class="product-image"
+                            />
+                            <div class="product-info">
+                                <span class="product-tag">Brownie</span>
+                                <h4>Brownies Decorados</h4>
+                                <p class="text-muted">
+                                    Brownies com cobertura artística e toppings
+                                    especiais para ocasiões especiais.
+                                </p>
+                                <p class="product-price">
+                                    R$ 49,90 (caixa com 6)
+                                </p>
+                                <a
+                                    href="https://wa.me/5538998983075?text=Olá,%20gostaria%20de%20encomendar%20uma%20caixa%20de%20Brownies%20Decorados"
+                                    class="btn btn-order"
+                                    >Encomendar</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <p>© 2023 Confeitaria Jiji - Todos os direitos reservados</p>
-        <p class="small">Imagens fielmente realistas. Consulte disponibilidade e preços atualizados.</p>
-    </div>
-</footer>
+        <!-- Cinnamon Roll Section -->
+        <section class="cinnamon-section" id="cinnamoon-section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 text-center mb-4">
+                        <h3>Cinnamon Rolls</h3>
+                        <p class="text-muted">
+                            Momentos perfeitos com gostinho de canela
+                        </p>
+                    </div>
 
-<!-- Botão de voltar ao topo -->
-<button class="back-to-top" id="backToTop">
-    <i class="bi bi-arrow-up"></i>
-</button>
+                    <div class="col-md-4 mb-4">
+                        <div class="product-card">
+                            <img
+                                src="fotosJijiPatisserie/realCinnamoon.png"
+                                alt="Cinnamoon Roll Tradicional"
+                                class="product-image"
+                            />
+                            <div class="product-info">
+                                <span class="product-tag">Cinnamon</span>
+                                <h4>Cinnamon Roll</h4>
+                                <p class="text-muted">
+                                    Nosso delicioso cinnamon roll com massa
+                                    macia e recheio generoso de canela.
+                                </p>
+                                <p class="product-price">R$ 19,90 (unidade)</p>
+                                <a
+                                    href="https://wa.me/5538998983075?text=Olá,%20gostaria%20de%20encomendar%20Cinnamoon%20Roll%20Tradicional"
+                                    class="btn btn-order"
+                                    >Encomendar</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<!-- Bootstrap Icons -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+        <!-- Cheesecake Section -->
+        <section class="cheesecake-section" id="cheesecake-section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 text-center mb-4">
+                        <h3>Cheesecakes</h3>
+                        <p class="text-muted">
+                            Cheesecakes cremosos feitos com ingredientes
+                            selecionados
+                        </p>
+                    </div>
 
-<!-- Scripts -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-    // Animações ao scroll
-    document.addEventListener('DOMContentLoaded', function() {
-        // Código existente para animações
-        const fadeElements = document.querySelectorAll('.fade-in');
+                    <div class="col-md-4 mb-4">
+                        <div class="product-card">
+                            <img
+                                src="fotosJijiPatisserie/realCheesecake.png"
+                                alt="Cheesecake Tradicional"
+                                class="product-image"
+                            />
+                            <div class="product-info">
+                                <span class="product-tag">Cheesecake</span>
+                                <h4>Cheesecake Tradicional</h4>
+                                <p class="text-muted">
+                                    Delicioso cheesecake com base crocante de
+                                    biscoito e cobertura de frutas vermelhas.
+                                </p>
+                                <p class="product-price">R$ 59,90</p>
+                                <a
+                                    href="https://wa.me/5538998983075?text=Olá,%20gostaria%20de%20encomendar%20um%20Cheesecake%20Tradicional"
+                                    class="btn btn-order"
+                                    >Encomendar</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        // Em dispositivos móveis, tornar elementos importantes imediatamente visíveis
-        if (window.innerWidth <= 768) {
-            document.querySelector('#products').classList.add('visible-mobile');
+        <!-- Bolos Tradicionais Section -->
+        <section class="bolos-section" id="bolos-produtos">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 text-center mb-4">
+                        <h3>Bolos tradicionais</h3>
+                        <p class="text-muted">
+                            Bolos feitos com pão de ló ou massa tradicional para
+                            qualquer momento do dia
+                        </p>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="product-card h-100">
+                            <img
+                                src="fotosJijiPatisserie/bololimao.jpg"
+                                alt="Bolo de Limão"
+                                class="product-image"
+                            />
+                            <div class="product-info">
+                                <span class="product-tag">Bolo</span>
+                                <h4>Bolo de Limão</h4>
+                                <p class="text-muted">
+                                    Suave pão de ló com recheio cremoso e
+                                    cobertura de limão-taiti.
+                                </p>
+                                <p class="product-price">R$ 27,90</p>
+                                <a
+                                    href="https://wa.me/5538998983075?text=Olá,%20gostaria%20de%20encomendar%20um%20Cheesecake%20de%20Limão"
+                                    class="btn btn-order"
+                                    >Encomendar</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="product-card h-100">
+                            <img
+                                src="fotosJijiPatisserie/bolodechocolate.jpg"
+                                alt="Bolo de Cenoura com Chocolate"
+                                class="product-image"
+                            />
+                            <div class="product-info">
+                                <span class="product-tag">Bolo</span>
+                                <h4>Bolo de Cenoura com Chocolate</h4>
+                                <p class="text-muted">
+                                    Massa úmida de cenoura com recheio de cacau
+                                    100%.
+                                </p>
+                                <p class="product-price">R$ 27,90</p>
+                                <a
+                                    href="https://wa.me/5538998983075?text=Olá,%20gostaria%20de%20encomendar%20um%20Bolo%20de%20Cenoura%20com%20Chocolate"
+                                    class="btn btn-order"
+                                    >Encomendar</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="product-card h-100">
+                            <img
+                                src="fotosJijiPatisserie/bolodefuba.jpg"
+                                alt="Bolo de Fubá"
+                                class="product-image"
+                            />
+                            <div class="product-info">
+                                <span class="product-tag">Bolo</span>
+                                <h4>Bolo de Fubá</h4>
+                                <p class="text-muted">
+                                    Massa macia e umida, com textura única e
+                                    aroma que remete a culinária mineira.
+                                </p>
+                                <p class="product-price">R$ 24,90</p>
+                                <a
+                                    href="https://wa.me/5538998983075?text=Olá,%20gostaria%20de%20encomendar%20um%20Cheesecake%20de%20Limão"
+                                    class="btn btn-order"
+                                    >Encomendar</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-            // Adicionar classe visible-mobile a todos os elementos dentro da seção produtos
-            document.querySelectorAll('#products .fade-in, #products .product-card, #products .row, #products .col-md-4')
-                .forEach(el => {
-                    el.classList.add('visible-mobile');
+        <!-- About Section -->
+        <section class="about fade-in" id="about">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="about-card">
+                            <h2 class="h1 mb-4 text-center">Nossa História</h2>
+                            <p>
+                                A JijiPatisserie nasceu do encontro entre paixão
+                                e tradição. Fundada por uma confeiteira que
+                                sempre sonhou em transformar ingredientes em
+                                pequenas obras de arte, nossa patisserie carrega
+                                o nome de Jiji, a gata preta que, com seu olhar
+                                atento e exigente, tornou-se a guardiã e símbolo
+                                de nossa qualidade.
+                            </p>
+                            <p>
+                                Em nossa cozinha, cada criação é pensada com
+                                cuidado meticuloso. Utilizamos apenas
+                                ingredientes selecionados, como o cacau 100%,
+                                mel regional e frutas frescas da estação. Nossa
+                                especialidade está nos doces artesanais que
+                                combinam técnicas tradicionais com toques
+                                contemporâneos, resultando em experiências
+                                sensoriais únicas.
+                            </p>
+                            <p>
+                                O que começou como um pequeno ateliê de doces
+                                ganhou reconhecimento pelo compromisso com o
+                                sabor autêntico e apresentação impecável. Da
+                                massa perfeitamente aerada dos nossos pães de ló
+                                até a textura sedosa das nossas coberturas, cada
+                                detalhe é supervisionado com o mesmo cuidado que
+                                Jiji dedica ao escolher seu lugar favorito para
+                                descansar.
+                            </p>
+                            <p>
+                                Acreditamos que a confeitaria vai além da
+                                simples indulgência – é uma forma de conexão,
+                                celebração e memória afetiva. Seja em um brownie
+                                de chocolate intenso, um bolo de limão
+                                refrescante ou nas nossas criações sazonais como
+                                os ovos de Páscoa artesanais, buscamos
+                                proporcionar momentos de prazer genuíno.
+                            </p>
+                            <p>
+                                Convidamos você a conhecer nosso universo de
+                                sabores, onde cada mordida conta uma história e
+                                cada doce leva o selo de aprovação da nossa mais
+                                exigente crítica: Jiji, nossa chef de patinhas,
+                                sempre atenta para garantir que apenas o
+                                extraordinário chegue até você. "Doces com o
+                                toque de Jiji: para quem busca o
+                                extraordinário."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact fade-in" id="contact">
+            <div class="container">
+                <div class="row justify-content-center mb-5">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="display-4 mb-3 text-white">
+                            Entre em Contato
+                        </h2>
+                        <p class="lead text-white mb-0">
+                            Estamos ansiosos para adoçar seu dia com nossas
+                            criações.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <div class="contact-card">
+                            <div class="row">
+                                <div class="col-md-6 mb-4 mb-md-0">
+                                    <div
+                                        class="d-flex align-items-center mb-3 contact-info"
+                                    >
+                                        <span class="contact-icon">📱</span>
+                                        <div>
+                                            <h5 class="mb-0">WhatsApp</h5>
+                                            <p class="mb-0">(38) 99898-3075</p>
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        class="d-flex align-items-center mb-3 contact-info"
+                                    >
+                                        <span class="contact-icon">📧</span>
+                                        <div>
+                                            <h5 class="mb-0">Email</h5>
+                                            <p class="mb-0">
+                                                jijimaiabrasil@gmail.com
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        class="d-flex align-items-center mb-3 contact-info"
+                                    >
+                                        <span class="contact-icon">📍</span>
+                                        <div>
+                                            <h5 class="mb-0">Endereço</h5>
+                                            <p class="mb-0">
+                                                Rua Seis, 155 - Morada do Sol<br />Montes
+                                                Claros - MG
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        class="d-flex align-items-center mb-3 contact-info"
+                                    >
+                                        <span class="contact-icon">⏰</span>
+                                        <div>
+                                            <h5 class="mb-0">
+                                                Horário de Atendimento
+                                            </h5>
+                                            <p class="mb-0">
+                                                Segunda a Sábado: 9h às 18h
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div class="mt-4">
+                                        <h5>Fale Conosco Diretamente</h5>
+                                        <a
+                                            href="https://wa.me/5538998983075"
+                                            class="direct-contact-btn"
+                                            style="
+                                                background-color: #00e676;
+                                                display: inline-flex;
+                                                align-items: center;
+                                                padding: 10px 20px;
+                                                font-weight: 600;
+                                                text-decoration: none;
+                                                color: white;
+                                                border-radius: 30px;
+                                                transition: all 0.3s ease;
+                                                box-shadow: 0 4px 8px
+                                                    rgba(0, 0, 0, 0.1);
+                                            "
+                                        >
+                                            <i
+                                                class="bi bi-whatsapp"
+                                                style="
+                                                    font-size: 1.2rem;
+                                                    margin-right: 10px;
+                                                "
+                                            ></i>
+                                            Conversar no WhatsApp
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <h5 class="mb-3">Onde Estamos</h5>
+                                    <div class="ratio ratio-4x3 mb-3">
+                                        <iframe
+                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3818.7721783356647!2d-43.87658892394865!3d-16.83169188402245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xab53a0643f1edf%3A0xe2f6fb5822e9a11c!2sR.%20Seis%2C%20155%20-%20Morada%20do%20Sol%2C%20Montes%20Claros%20-%20MG%2C%2039403-113!5e0!3m2!1spt-BR!2sbr!4v1710527521901!5m2!1spt-BR!2sbr"
+                                            width="600"
+                                            height="450"
+                                            style="border: 0"
+                                            allowfullscreen=""
+                                            loading="lazy"
+                                            referrerpolicy="no-referrer-when-downgrade"
+                                        ></iframe>
+                                    </div>
+
+                                    <h5 class="mb-3">
+                                        Siga-nos nas Redes Sociais
+                                    </h5>
+                                    <div class="social-icons">
+                                        <a
+                                            href="https://www.instagram.com/jiji_confeitaria?igsh=Nnk5aXZkcXV6eDdi"
+                                            target="_blank"
+                                            title="Instagram"
+                                        >
+                                            <i class="bi bi-instagram"></i>
+                                        </a>
+                                        <a
+                                            href="https://facebook.com/jijipatisserie"
+                                            target="_blank"
+                                            title="Facebook"
+                                        >
+                                            <i class="bi bi-facebook"></i>
+                                        </a>
+                                        <a
+                                            href="https://www.tiktok.com/@jijipatisserie"
+                                            target="_blank"
+                                            title="TikTok"
+                                        >
+                                            <i class="bi bi-tiktok"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer
+            class="footer"
+            style="
+                background-image: url(&quot;fotosJijiPatisserie/BakeryStudioGhibli.webp&quot;);
+                background-size: cover;
+                background-position: center;
+                position: relative;
+                color: white;
+                text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+            "
+        >
+            <!-- Overlay para melhorar o contraste -->
+            <div
+                style="
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba(0, 0, 0, 0.6);
+                "
+            ></div>
+
+            <div class="container" style="position: relative; z-index: 2">
+                <img
+                    src="fotosJijiPatisserie/jiji.png"
+                    alt="Confeitaria Jiji"
+                    class="footer-logo"
+                />
+
+                <div class="social-icons">
+                    <a
+                        href="https://instagram.com/jijipatisserie"
+                        target="_blank"
+                        ><i class="bi bi-instagram"></i
+                    ></a>
+                    <a
+                        href="https://facebook.com/jijipatisserie"
+                        target="_blank"
+                        ><i class="bi bi-facebook"></i
+                    ></a>
+                    <a href="https://wa.me/5538998983075" target="_blank"
+                        ><i class="bi bi-whatsapp"></i
+                    ></a>
+                </div>
+
+                <p>© 2023 Confeitaria Jiji - Todos os direitos reservados</p>
+                <p class="small">
+                    Imagens fielmente realistas. Consulte disponibilidade e
+                    preços atualizados.
+                </p>
+            </div>
+        </footer>
+
+        <!-- Botão de voltar ao topo -->
+        <button class="back-to-top" id="backToTop">
+            <i class="bi bi-arrow-up"></i>
+        </button>
+
+        <!-- Bootstrap Icons -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css"
+        />
+
+        <!-- Scripts -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <!-- GSAP + ScrollTrigger -->
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+        <script>
+            // Inicializar carrossel do header
+            const headerSwiper = new Swiper(".header-carousel .swiper", {
+                effect: "fade",
+                loop: true,
+                loopedSlides: 3,
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                    pauseOnMouseEnter: false,
+                },
+                speed: 1500,
+                slidesPerView: 1,
+                fadeEffect: {
+                    crossFade: true,
+                },
+                allowTouchMove: false,
+                watchSlidesProgress: true,
+                on: {
+                    init: function () {
+                        this.autoplay.start();
+                    },
+                },
+            });
+
+            // Registrar ScrollTrigger plugin
+            gsap.registerPlugin(ScrollTrigger);
+
+            // Animação da logo do navbar ao rolar
+            const navbarBrand = document.querySelector(".navbar-brand");
+
+            ScrollTrigger.create({
+                trigger: ".header",
+                start: "bottom top",
+                end: "+=9999",
+                onEnter: () => navbarBrand.classList.add("show"),
+                onLeaveBack: () => navbarBrand.classList.remove("show"),
+            });
+
+            // Efeitos de scroll no carrossel do header (removido scrub para não travar)
+            gsap.to(".header-carousel", {
+                scrollTrigger: {
+                    trigger: ".header",
+                    start: "top top",
+                    end: "bottom top",
+                    toggleActions: "play none none reverse",
+                },
+                opacity: 0,
+                scale: 1.1,
+                filter: "blur(10px)",
+                duration: 1,
+                ease: "power2.out",
+            });
+
+            // Efeito parallax no conteúdo do header (removido scrub para não travar)
+            gsap.to(".header .container", {
+                scrollTrigger: {
+                    trigger: ".header",
+                    start: "top top",
+                    end: "bottom top",
+                    toggleActions: "play none none reverse",
+                },
+                y: 100,
+                opacity: 0.4,
+                duration: 1,
+                ease: "power2.out",
+            });
+
+            // Efeito de fade e slide up nas seções
+            gsap.utils.toArray("section:not(.header)").forEach((section) => {
+                gsap.from(section, {
+                    scrollTrigger: {
+                        trigger: section,
+                        start: "top 80%",
+                        end: "top 20%",
+                        scrub: 1,
+                    },
+                    opacity: 0,
+                    y: 100,
+                    ease: "power2.out",
                 });
-        }
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('show');
-
-                    // Para dispositivos móveis, tornar todos os filhos também visíveis
-                    if (window.innerWidth <= 768 && entry.target.id === 'products') {
-                        entry.target.querySelectorAll('.fade-in').forEach(el => {
-                            el.classList.add('show');
-                        });
-                    }
-                }
             });
-        }, { threshold: 0.1, rootMargin: '0px 0px -100px 0px' }); // Aumentar a margem para detectar mais cedo
 
-        fadeElements.forEach(element => {
-            observer.observe(element);
-        });
-
-        // Botão de voltar ao topo
-        const backToTopButton = document.getElementById('backToTop');
-
-        window.addEventListener('scroll', function() {
-            if (window.pageYOffset > 300) {
-                backToTopButton.classList.add('show');
-            } else {
-                backToTopButton.classList.remove('show');
-            }
-        });
-
-
-
-        backToTopButton.addEventListener('click', function() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-
-        // Navegação por tabs nas Criações Especiais
-        const categoryTabs = document.querySelectorAll('.category-tab');
-
-        categoryTabs.forEach(tab => {
-            tab.addEventListener('click', function() {
-                // Remove active class from all tabs
-                categoryTabs.forEach(t => t.classList.remove('active'));
-
-                // Add active class to clicked tab
-                this.classList.add('active');
-
-                // Hide all content
-                document.querySelectorAll('.special-content').forEach(content => {
-                    content.classList.remove('active');
-                });
-
-                // Show selected content
-                const category = this.getAttribute('data-category');
-                document.getElementById(category + '-content').classList.add('active');
-            });
-        });
-        function setupIconNavigation() {
-            // Selecionando todos os links de ícones pela classe
-            const iconLinks = document.querySelectorAll('.icon-link');
-
-            iconLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-
-                    const targetId = this.getAttribute('href');
-                    const targetElement = document.querySelector(targetId);
-
-                    if (targetElement) {
-                        // Rolar suavemente até o elemento com um offset para a barra de navegação
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 80, // Ajuste este valor conforme necessário
-                            behavior: 'smooth'
-                        });
-                    }
+            // Efeito parallax nos cards de produtos
+            gsap.utils.toArray(".product-card").forEach((card, i) => {
+                gsap.from(card, {
+                    scrollTrigger: {
+                        trigger: card,
+                        start: "top 90%",
+                        end: "top 30%",
+                        scrub: 1,
+                    },
+                    opacity: 0,
+                    y: 80,
+                    rotation: i % 2 === 0 ? 3 : -3,
+                    ease: "power2.out",
                 });
             });
-        }
 
-        // Chamando a função de configuração da navegação
-        setupIconNavigation();
-        const iconLinks = document.querySelectorAll('.icon-link');
+            // Efeito nos special cards
+            gsap.utils.toArray(".special-card").forEach((card) => {
+                gsap.from(card, {
+                    scrollTrigger: {
+                        trigger: card,
+                        start: "top 85%",
+                        end: "top 40%",
+                        scrub: 1,
+                    },
+                    opacity: 0,
+                    scale: 0.9,
+                    y: 60,
+                    ease: "back.out(1.2)",
+                });
+            });
 
-        iconLinks.forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-
-                const targetId = this.getAttribute('href').substring(1); // Remove o # do início
-                const targetElement = document.getElementById(targetId);
-
-                console.log("Clicado em:", targetId); // Para debug
-                console.log("Elemento encontrado:", targetElement); // Para debug
-
-                if (targetElement) {
-                    // Usa getBoundingClientRect para posicionamento mais preciso
-                    const rect = targetElement.getBoundingClientRect();
-                    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                    const targetPosition = rect.top + scrollTop - 100; // 100px de offset
-
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
+            // Efeito suave nas imagens (sem parallax para evitar descentralização)
+            gsap.utils
+                .toArray(".product-image, .special-image")
+                .forEach((img) => {
+                    gsap.from(img, {
+                        scrollTrigger: {
+                            trigger: img,
+                            start: "top 90%",
+                            end: "top 60%",
+                            scrub: 1,
+                            toggleActions: "play none none reverse",
+                        },
+                        opacity: 0,
+                        scale: 0.95,
+                        ease: "power2.out",
                     });
-                } else {
-                    console.error("Elemento com ID", targetId, "não encontrado"); // Para debug
-                }
+                });
+
+            // Efeito de pinning e fade na seção about
+            gsap.to(".about", {
+                scrollTrigger: {
+                    trigger: ".about",
+                    start: "top top",
+                    end: "bottom top",
+                    scrub: 1,
+                },
+                scale: 0.95,
+                opacity: 0.8,
+                ease: "none",
             });
-        });
-    });
-</script>
-</body>
+
+            // Animação dos ícones de categorias
+            gsap.utils.toArray(".cat-icon").forEach((icon, i) => {
+                gsap.from(icon, {
+                    scrollTrigger: {
+                        trigger: icon,
+                        start: "top 85%",
+                        end: "top 50%",
+                        scrub: 1,
+                    },
+                    scale: 0,
+                    rotation: 360,
+                    opacity: 0,
+                    ease: "elastic.out(1, 0.5)",
+                });
+            });
+
+            // Efeito de revelação nos títulos
+            gsap.utils.toArray("h2, h3.special-title").forEach((title) => {
+                gsap.from(title, {
+                    scrollTrigger: {
+                        trigger: title,
+                        start: "top 85%",
+                        end: "top 60%",
+                        scrub: 1,
+                    },
+                    opacity: 0,
+                    x: -100,
+                    ease: "power3.out",
+                });
+            });
+        </script>
+        <script>
+            // Animações ao scroll
+            document.addEventListener("DOMContentLoaded", function () {
+                // Código existente para animações
+                const fadeElements = document.querySelectorAll(".fade-in");
+
+                // Em dispositivos móveis, tornar elementos importantes imediatamente visíveis
+                if (window.innerWidth <= 768) {
+                    document
+                        .querySelector("#products")
+                        .classList.add("visible-mobile");
+
+                    // Adicionar classe visible-mobile a todos os elementos dentro da seção produtos
+                    document
+                        .querySelectorAll(
+                            "#products .fade-in, #products .product-card, #products .row, #products .col-md-4",
+                        )
+                        .forEach((el) => {
+                            el.classList.add("visible-mobile");
+                        });
+                }
+
+                const observer = new IntersectionObserver(
+                    (entries) => {
+                        entries.forEach((entry) => {
+                            if (entry.isIntersecting) {
+                                entry.target.classList.add("show");
+
+                                // Para dispositivos móveis, tornar todos os filhos também visíveis
+                                if (
+                                    window.innerWidth <= 768 &&
+                                    entry.target.id === "products"
+                                ) {
+                                    entry.target
+                                        .querySelectorAll(".fade-in")
+                                        .forEach((el) => {
+                                            el.classList.add("show");
+                                        });
+                                }
+                            }
+                        });
+                    },
+                    { threshold: 0.1, rootMargin: "0px 0px -100px 0px" },
+                ); // Aumentar a margem para detectar mais cedo
+
+                fadeElements.forEach((element) => {
+                    observer.observe(element);
+                });
+
+                // Botão de voltar ao topo
+                const backToTopButton = document.getElementById("backToTop");
+
+                window.addEventListener("scroll", function () {
+                    if (window.pageYOffset > 300) {
+                        backToTopButton.classList.add("show");
+                    } else {
+                        backToTopButton.classList.remove("show");
+                    }
+                });
+
+                backToTopButton.addEventListener("click", function () {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: "smooth",
+                    });
+                });
+
+                // Navegação por tabs nas Criações Especiais
+                const categoryTabs = document.querySelectorAll(".category-tab");
+
+                categoryTabs.forEach((tab) => {
+                    tab.addEventListener("click", function () {
+                        // Remove active class from all tabs
+                        categoryTabs.forEach((t) =>
+                            t.classList.remove("active"),
+                        );
+
+                        // Add active class to clicked tab
+                        this.classList.add("active");
+
+                        // Hide all content
+                        document
+                            .querySelectorAll(".special-content")
+                            .forEach((content) => {
+                                content.classList.remove("active");
+                            });
+
+                        // Show selected content
+                        const category = this.getAttribute("data-category");
+                        document
+                            .getElementById(category + "-content")
+                            .classList.add("active");
+                    });
+                });
+                function setupIconNavigation() {
+                    // Selecionando todos os links de ícones pela classe
+                    const iconLinks = document.querySelectorAll(".icon-link");
+
+                    iconLinks.forEach((link) => {
+                        link.addEventListener("click", function (e) {
+                            e.preventDefault();
+
+                            const targetId = this.getAttribute("href");
+                            const targetElement =
+                                document.querySelector(targetId);
+
+                            if (targetElement) {
+                                // Rolar suavemente até o elemento com um offset para a barra de navegação
+                                window.scrollTo({
+                                    top: targetElement.offsetTop - 80, // Ajuste este valor conforme necessário
+                                    behavior: "smooth",
+                                });
+                            }
+                        });
+                    });
+                }
+
+                // Chamando a função de configuração da navegação
+                setupIconNavigation();
+                const iconLinks = document.querySelectorAll(".icon-link");
+
+                iconLinks.forEach((link) => {
+                    link.addEventListener("click", function (e) {
+                        e.preventDefault();
+
+                        const targetId = this.getAttribute("href").substring(1); // Remove o # do início
+                        const targetElement = document.getElementById(targetId);
+
+                        console.log("Clicado em:", targetId); // Para debug
+                        console.log("Elemento encontrado:", targetElement); // Para debug
+
+                        if (targetElement) {
+                            // Usa getBoundingClientRect para posicionamento mais preciso
+                            const rect = targetElement.getBoundingClientRect();
+                            const scrollTop =
+                                window.pageYOffset ||
+                                document.documentElement.scrollTop;
+                            const targetPosition = rect.top + scrollTop - 100; // 100px de offset
+
+                            window.scrollTo({
+                                top: targetPosition,
+                                behavior: "smooth",
+                            });
+                        } else {
+                            console.error(
+                                "Elemento com ID",
+                                targetId,
+                                "não encontrado",
+                            ); // Para debug
+                        }
+                    });
+                });
+            });
+        </script>
+    </body>
 </html>
