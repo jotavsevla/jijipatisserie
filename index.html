@@ -39,15 +39,17 @@
         <link rel="shortcut icon" href="fotosJijiPatisserie/jiji.png" />
         <style>
             :root {
-                --jiji-black: #000000;
-                --jiji-turquoise: #4ecdc4;
-                --jiji-yellow: #ffd166;
-                --jiji-pink: #ff6b6b;
-                --jiji-brown: #a67c52;
-                --jiji-light: #fff9ec;
-                --jiji-cream: #fff0db;
-                --jiji-bg-offwhite: #faf8f5;
-                --jiji-card-offwhite: #fdfcfa;
+                /* Paleta baseada em #6b7c54 (verde sage/oliva) */
+                --jiji-black: #1a1f16;
+                --jiji-sage: #6b7c54; /* Cor principal - verde sage */
+                --jiji-sage-light: #8a9b75; /* Tom mais claro para hover */
+                --jiji-sage-dark: #566342; /* Tom mais escuro */
+                --jiji-cream: #f5f3e8; /* Creme natural */
+                --jiji-light: #faf9f4; /* Background suave */
+                --jiji-beige: #e8e5d6; /* Bege esverdeado */
+                --jiji-bg-offwhite: #fcfcf8;
+                --jiji-card-offwhite: #fffefc;
+                --jiji-accent: #7d8f66; /* Acento intermediário */
             }
 
             * {
@@ -316,7 +318,7 @@
 
             .navbar-nav .nav-link:hover,
             .navbar-nav .nav-link.active {
-                background-color: var(--jiji-turquoise);
+                background-color: var(--jiji-sage);
                 color: white;
             }
 
@@ -511,7 +513,7 @@
 
             .product-tag {
                 display: inline-block;
-                background-color: var(--jiji-turquoise);
+                background-color: var(--jiji-sage);
                 color: white;
                 padding: 0.25rem 0.75rem;
                 border-radius: 20px;
@@ -521,7 +523,7 @@
             }
 
             .product-tag:hover {
-                background-color: var(--jiji-pink);
+                background-color: var(--jiji-sage-dark);
             }
 
             .product-price {
@@ -540,7 +542,7 @@
                 height: 2px;
                 bottom: -2px;
                 left: 0;
-                background-color: var(--jiji-pink);
+                background-color: var(--jiji-sage);
                 transition: width 0.3s ease;
             }
 
@@ -550,7 +552,7 @@
 
             /* Botão de ação */
             .btn-order {
-                background-color: var(--jiji-pink);
+                background-color: var(--jiji-sage);
                 color: white;
                 border-radius: 25px;
                 padding: 0.5rem 1.5rem;
@@ -561,7 +563,7 @@
             }
 
             .btn-order:hover {
-                background-color: var(--jiji-turquoise);
+                background-color: var(--jiji-sage-dark);
                 transform: translateY(-2px);
                 box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             }
@@ -569,7 +571,7 @@
             /* Special Products */
             .special-products {
                 padding: 5rem 0;
-                background-color: var(--jiji-pink);
+                background-color: var(--jiji-sage);
                 position: relative;
                 width: 100%;
                 max-width: 100vw;
@@ -680,7 +682,7 @@
             }
 
             .category-tab.active {
-                background-color: var(--jiji-turquoise);
+                background-color: var(--jiji-sage-dark);
                 color: white;
             }
 
@@ -740,7 +742,7 @@
             }
 
             .contact-icon {
-                color: var(--jiji-turquoise);
+                color: var(--jiji-sage);
                 font-size: 1.5rem;
                 margin-right: 1rem;
                 transition: transform 0.3s ease;
@@ -751,7 +753,7 @@
             }
 
             .direct-contact-btn {
-                background-color: var(--jiji-turquoise);
+                background-color: var(--jiji-sage);
                 color: white;
                 border-radius: 25px;
                 padding: 0.75rem 2rem;
@@ -764,7 +766,7 @@
             }
 
             .direct-contact-btn:hover {
-                background-color: var(--jiji-pink);
+                background-color: var(--jiji-sage-light);
                 transform: translateY(-3px);
                 box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
                 color: white;
@@ -848,7 +850,7 @@
                 width: 40px;
                 height: 40px;
                 border-radius: 50%;
-                background-color: var(--jiji-turquoise);
+                background-color: var(--jiji-sage);
                 color: white;
                 margin: 0 0.5rem;
                 font-size: 1.2rem;
@@ -856,7 +858,7 @@
             }
 
             .social-icons a:hover {
-                background-color: var(--jiji-pink);
+                background-color: var(--jiji-sage-light);
                 transform: translateY(-3px);
             }
 
@@ -867,7 +869,7 @@
                 right: 20px;
                 width: 40px;
                 height: 40px;
-                background-color: var(--jiji-pink);
+                background-color: var(--jiji-sage);
                 color: white;
                 border-radius: 50%;
                 display: flex;
@@ -887,7 +889,7 @@
             }
 
             .back-to-top:hover {
-                background-color: var(--jiji-turquoise);
+                background-color: var(--jiji-sage-light);
                 transform: translateY(-3px);
             }
 
