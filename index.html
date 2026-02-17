@@ -105,15 +105,45 @@
         </div>
 
         <div class="hero-media reveal">
-          <img
-            src="assets/images/brand/logo-full.webp"
-            alt="Logo da JIJI Confeitaria Artesanal"
-            width="900"
-            height="1350"
-            loading="eager"
-            decoding="async"
-            fetchpriority="high"
-          />
+          <div class="hero-slider" id="hero-slider" aria-label="Carrossel de bolos" tabindex="0">
+            <div class="hero-slider-track" id="hero-slider-track" aria-live="polite"></div>
+
+            <div class="hero-slider-overlay">
+              <h3 class="hero-slider-title" id="hero-slider-title">Bolos da JIJI</h3>
+              <a
+                id="hero-slider-cta"
+                class="btn btn-primary hero-slider-cta"
+                data-wa
+                data-wa-text="Olá! Vim pelo site da JIJI e quero encomendar um bolo."
+              >
+                Encomendar este bolo
+              </a>
+            </div>
+
+            <button
+              class="hero-slider-control is-prev"
+              id="hero-slider-prev"
+              type="button"
+              aria-label="Ver bolo anterior"
+            >
+              ‹
+            </button>
+            <button
+              class="hero-slider-control is-next"
+              id="hero-slider-next"
+              type="button"
+              aria-label="Ver próximo bolo"
+            >
+              ›
+            </button>
+
+            <div
+              class="hero-slider-dots"
+              id="hero-slider-dots"
+              role="tablist"
+              aria-label="Selecionar bolo do carrossel"
+            ></div>
+          </div>
         </div>
       </div>
     </section>

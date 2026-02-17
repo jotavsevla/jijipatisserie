@@ -11,6 +11,13 @@ const highlightsRoot = document.getElementById("highlights-grid");
 const galleryRoot = document.getElementById("gallery-grid");
 const topbar = document.querySelector(".topbar");
 const brandDock = document.querySelector(".brand-dock");
+const heroSliderRoot = document.getElementById("hero-slider");
+const heroSliderTrack = document.getElementById("hero-slider-track");
+const heroSliderTitle = document.getElementById("hero-slider-title");
+const heroSliderCta = document.getElementById("hero-slider-cta");
+const heroSliderDots = document.getElementById("hero-slider-dots");
+const heroSliderPrev = document.getElementById("hero-slider-prev");
+const heroSliderNext = document.getElementById("hero-slider-next");
 
 function createWhatsAppUrl(customMessage) {
   const message = (customMessage || siteConfig.whatsappDefaultText || "").trim();
@@ -166,6 +173,199 @@ function renderGallery(items) {
   galleryRoot.append(fragment);
 }
 
+function setupHeroSlider(items) {
+  if (
+    !heroSliderRoot ||
+    !heroSliderTrack ||
+    !heroSliderTitle ||
+    !heroSliderCta ||
+    !heroSliderDots ||
+    !heroSliderPrev ||
+    !heroSliderNext
+  ) {
+    return;
+  }
+
+  const sliderItems = items.filter((item) => item.category === "bolos-eventos");
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const hasMultiple = sliderItems.length > 1;
+  let activeIndex = 0;
+  let autoplayId = 0;
+
+  const stopAutoplay = () => {
+    if (!autoplayId) return;
+    window.clearInterval(autoplayId);
+    autoplayId = 0;
+  };
+
+  const startAutoplay = () => {
+    if (reduceMotion || !hasMultiple || autoplayId) return;
+    autoplayId = window.setInterval(() => {
+      goTo(activeIndex + 1);
+    }, 4000);
+  };
+
+  const restartAutoplay = () => {
+    stopAutoplay();
+    startAutoplay();
+  };
+
+  const updateActiveContent = (item) => {
+    heroSliderTitle.textContent = item.title;
+    heroSliderCta.href = createWhatsAppUrl(item.whatsappText);
+    heroSliderCta.setAttribute("target", "_blank");
+    heroSliderCta.setAttribute("rel", "noopener noreferrer");
+    heroSliderCta.setAttribute("aria-label", `Encomendar ${item.title} no WhatsApp`);
+  };
+
+  if (sliderItems.length === 0) {
+    heroSliderRoot.classList.add("is-empty");
+    heroSliderTrack.innerHTML = "";
+    heroSliderDots.innerHTML = "";
+
+    const emptySlide = document.createElement("div");
+    emptySlide.className = "hero-slide is-active";
+
+    const fallback = document.createElement("div");
+    fallback.className = "hero-slide-fallback is-visible";
+    fallback.textContent = "Nenhum bolo de evento cadastrado no momento.";
+
+    emptySlide.append(fallback);
+    heroSliderTrack.append(emptySlide);
+
+    heroSliderPrev.hidden = true;
+    heroSliderNext.hidden = true;
+    heroSliderDots.hidden = true;
+
+    heroSliderTitle.textContent = "Novos bolos em breve";
+    heroSliderCta.href = createWhatsAppUrl();
+    heroSliderCta.setAttribute("target", "_blank");
+    heroSliderCta.setAttribute("rel", "noopener noreferrer");
+    heroSliderCta.setAttribute("aria-label", "Falar com a JIJI no WhatsApp");
+    return;
+  }
+
+  heroSliderRoot.classList.remove("is-empty");
+  heroSliderTrack.innerHTML = "";
+  heroSliderDots.innerHTML = "";
+
+  const slides = [];
+  const dots = [];
+
+  sliderItems.forEach((item, index) => {
+    const slide = document.createElement("div");
+    slide.className = "hero-slide";
+    slide.setAttribute("aria-hidden", "true");
+
+    const image = document.createElement("img");
+    image.src = item.image;
+    image.alt = item.alt || `Foto de ${item.title}`;
+    image.width = 1536;
+    image.height = 1024;
+    image.loading = index === 0 ? "eager" : "lazy";
+    image.decoding = "async";
+    if (index === 0) image.fetchPriority = "high";
+
+    const fallback = document.createElement("div");
+    fallback.className = "hero-slide-fallback";
+    fallback.textContent = `Imagem de ${item.title} indisponível no momento.`;
+
+    image.addEventListener("error", () => {
+      image.classList.add("is-hidden");
+      fallback.classList.add("is-visible");
+    });
+
+    slide.append(image, fallback);
+    heroSliderTrack.append(slide);
+    slides.push(slide);
+
+    const dot = document.createElement("button");
+    dot.type = "button";
+    dot.className = "hero-slider-dot";
+    dot.setAttribute("role", "tab");
+    dot.setAttribute("aria-label", `Ver ${item.title}`);
+    dot.addEventListener("click", () => {
+      goTo(index);
+      restartAutoplay();
+    });
+
+    heroSliderDots.append(dot);
+    dots.push(dot);
+  });
+
+  const updateUi = () => {
+    slides.forEach((slide, index) => {
+      const isActive = index === activeIndex;
+      slide.classList.toggle("is-active", isActive);
+      slide.setAttribute("aria-hidden", String(!isActive));
+    });
+
+    dots.forEach((dot, index) => {
+      const isActive = index === activeIndex;
+      dot.classList.toggle("is-active", isActive);
+      dot.setAttribute("aria-selected", String(isActive));
+      dot.setAttribute("tabindex", isActive ? "0" : "-1");
+    });
+
+    updateActiveContent(sliderItems[activeIndex]);
+  };
+
+  const goTo = (nextIndex) => {
+    activeIndex = (nextIndex + sliderItems.length) % sliderItems.length;
+    updateUi();
+  };
+
+  heroSliderPrev.hidden = !hasMultiple;
+  heroSliderNext.hidden = !hasMultiple;
+  heroSliderDots.hidden = !hasMultiple;
+
+  heroSliderPrev.addEventListener("click", () => {
+    goTo(activeIndex - 1);
+    restartAutoplay();
+  });
+
+  heroSliderNext.addEventListener("click", () => {
+    goTo(activeIndex + 1);
+    restartAutoplay();
+  });
+
+  heroSliderRoot.addEventListener("mouseenter", stopAutoplay);
+  heroSliderRoot.addEventListener("mouseleave", startAutoplay);
+  heroSliderRoot.addEventListener("focusin", stopAutoplay);
+  heroSliderRoot.addEventListener("focusout", (event) => {
+    if (
+      event.relatedTarget instanceof Node &&
+      heroSliderRoot.contains(event.relatedTarget)
+    ) {
+      return;
+    }
+    startAutoplay();
+  });
+  heroSliderRoot.addEventListener("keydown", (event) => {
+    if (event.key === "ArrowRight") {
+      event.preventDefault();
+      goTo(activeIndex + 1);
+      restartAutoplay();
+    }
+    if (event.key === "ArrowLeft") {
+      event.preventDefault();
+      goTo(activeIndex - 1);
+      restartAutoplay();
+    }
+  });
+
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) {
+      stopAutoplay();
+      return;
+    }
+    startAutoplay();
+  });
+
+  updateUi();
+  startAutoplay();
+}
+
 function setupReveal() {
   const revealNodes = document.querySelectorAll(".reveal");
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -273,6 +473,7 @@ function init() {
   applyStaticLinks();
 
   const sortedItems = sortItems(galleryItems);
+  setupHeroSlider(sortedItems);
   renderHighlights(sortedItems);
   renderGallery(sortedItems);
 
